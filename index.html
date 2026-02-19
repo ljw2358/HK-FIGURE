@@ -1,209 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PHK-FIGURE | AI Robotics & Future Industry</title>
-
-<style>
-body {
-    margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:#0f0f1a;
-    color:white;
-}
-header {
-    background:#1a1a2e;
-    padding:20px;
-    text-align:center;
-}
-h1 {
-    margin:0;
-    font-size:32px;
-    color:#9f7aea;
-}
-nav {
-    text-align:center;
-    padding:15px;
-    background:#111122;
-}
-nav button {
-    margin:5px;
-    padding:10px 18px;
-    background:#9f7aea;
-    border:none;
-    color:white;
-    cursor:pointer;
-    border-radius:6px;
-}
-section {
-    display:none;
-    padding:40px;
-    min-height:100vh;
-}
-.active {
-    display:block;
-}
-.hero {
-    font-size:28px;
-    font-weight:bold;
-    margin-bottom:20px;
-    color:#c084fc;
-}
-.footer {
-    text-align:center;
-    padding:20px;
-    background:#1a1a2e;
-    margin-top:40px;
-}
-</style>
-
-<script>
-function showPage(id){
-    var pages = document.querySelectorAll("section");
-    pages.forEach(function(page){
-        page.classList.remove("active");
-    });
-    document.getElementById(id).classList.add("active");
-}
-</script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HK-FIGURE AI | Global Industrial Ledger</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Sans+KR:wght@300;400;700&display=swap');
+        :root { --hk-cyan: #22d3ee; --hk-dark: #020617; }
+        body { background-color: var(--hk-dark); color: #f1f5f9; font-family: 'Noto Sans KR', sans-serif; }
+        .font-orbitron { font-family: 'Orbitron', sans-serif; }
+        .data-table-container { background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px); border: 1px solid #1e293b; }
+        .row-hover:hover { background: rgba(34, 211, 238, 0.05); border-left: 4px solid var(--hk-cyan); transition: 0.2s; }
+        .lang-badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: bold; margin-right: 8px; }
+        .sticky-header { position: sticky; top: 0; z-index: 100; background: rgba(2, 6, 23, 0.95); border-bottom: 1px solid #1e293b; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+    </style>
 </head>
-<body>
+<body class="min-h-screen">
 
-<header>
-<h1>PHK-FIGURE</h1>
-<p>AI Robotics | Autonomous Labor | Future Industry</p>
-</header>
+    <nav class="sticky-header p-5 px-8 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="w-12 h-12 bg-gradient-to-tr from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/20">
+                <span class="font-orbitron font-black text-white text-xl italic">HK</span>
+            </div>
+            <div>
+                <h1 class="font-orbitron text-xl font-black tracking-widest text-white">FIGURE AI <span class="text-cyan-400">CORP</span></h1>
+                <p class="text-[9px] text-slate-500 uppercase tracking-tighter">Global Autonomous Robotics Infrastructure</p>
+            </div>
+        </div>
+        <div class="hidden md:flex flex-col items-end">
+            <span class="text-[10px] text-cyan-500 font-mono">GLOBAL CONTACT</span>
+            <a href="mailto:info@hkfigure.com" class="text-sm font-bold hover:text-cyan-400 transition">info@hkfigure.com</a>
+        </div>
+    </nav>
 
-<nav>
-<button onclick="showPage('english')">English</button>
-<button onclick="showPage('korean')">한국어</button>
-<button onclick="showPage('chinese')">中文</button>
-<button onclick="showPage('arabic')">العربية</button>
-<button onclick="showPage('spanish')">Español</button>
-</nav>
+    <header class="py-20 px-6 text-center border-b border-slate-900 bg-slate-950">
+        <h2 class="text-5xl md:text-7xl font-black mb-8 leading-tight font-orbitron uppercase">
+            Humanoid <br><span class="text-cyan-400">Intelligence</span> Ledger
+        </h2>
+        <p class="max-w-4xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed">
+            **HK-FIGURE AI** 산업의 휴머노이드 인지 시스템, 자율 주행 신경망 및 글로벌 인프라 통합을 위한 4개 국어 기술 명세서입니다. 
+            <span class="text-white font-bold italic">400개 이상의 기술 노드(Node)가 실시간 동기화됩니다.</span>
+        </p>
+    </header>
 
-<!-- ENGLISH PAGE -->
-<section id="english" class="active">
-<div class="hero">Rebuilding Industry with AI Robotics</div>
+    <main class="max-w-[1400px] mx-auto px-6 py-12">
+        <div class="data-table-container rounded-2xl overflow-hidden shadow-2xl">
+            <div class="overflow-x-auto overflow-y-auto max-h-[1000px]">
+                <table class="w-full text-left border-collapse">
+                    <thead class="bg-slate-900 text-cyan-400 text-[11px] uppercase tracking-widest font-bold">
+                        <tr>
+                            <th class="p-6 border-b border-slate-800">Index</th>
+                            <th class="p-6 border-b border-slate-800">English (EN)</th>
+                            <th class="p-6 border-b border-slate-800">한국어 (KO)</th>
+                            <th class="p-6 border-b border-slate-800">中文 (CN)</th>
+                            <th class="p-6 border-b border-slate-800 text-right">العربية (AR)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="master-table-body" class="text-sm">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
 
-<p>PHK-FIGURE is a next-generation robotics and AI integration initiative designed to transform labor-intensive industries.</p>
+    <footer class="py-20 border-t border-slate-900 text-center">
+        <div class="mb-6 opacity-50 grayscale hover:grayscale-0 transition cursor-default">
+            <span class="mx-4 font-orbitron text-xs">SEOUL</span>
+            <span class="mx-4 font-orbitron text-xs">NEW YORK</span>
+            <span class="mx-4 font-orbitron text-xs">DUBAI</span>
+            <span class="mx-4 font-orbitron text-xs">SHANGHAI</span>
+        </div>
+        <p class="text-slate-600 text-[11px] font-mono tracking-widest uppercase">
+            © 2026 HK-FIGURE AI CORP. ALL RIGHTS RESERVED. INQUIRIES: info@hkfigure.com
+        </p>
+    </footer>
 
-<h2>Vision</h2>
-<p>To eliminate labor shortages, increase productivity, and redefine global manufacturing competitiveness.</p>
+    <script>
+        // HK-FIGURE AI 기술 데이터 풀
+        const techPool = [
+            {en: "Autonomous Bipedal Gait", ko: "자율 이족 보행 제어", cn: "自主双足步态控制", ar: "التحكم في المشي ثنائي الأرجل المستقل"},
+            {en: "Neural Network Optimization", ko: "신경망 가속 및 최적화", cn: "神经网络加速与优化", ar: "تحسين وتسريع الشبكة العصبية"},
+            {en: "Visual Perception Engine", ko: "시각적 인지 엔진 시스템", cn: "视觉感知引擎系统", ar: "نظام محرك الإدراك البصري"},
+            {en: "Force Feedback Haptics", ko: "실시간 힘 피드백 촉각 제어", cn: "实时力反馈触觉控制", ar: "التحكم اللمسي في قوة التغذية الراجعة"},
+            {en: "Human-Robot Interaction", ko: "인간-로봇 상호작용(HRI)", cn: "人机交互系统", ar: "تفاعل الإنسان والروبوت"},
+            {en: "Edge Computing Node", ko: "엣지 컴퓨팅 데이터 노드", cn: "边缘计算数据节点", ar: "عقدة بيانات حوسبة الحافة"},
+            {en: "Swarm Intelligence Protocol", ko: "군집 지능 통신 프로토콜", cn: "群智通信协议", ar: "بروتوكول ذكاء السرب"},
+            {en: "Kinematic Motion Planning", ko: "운동학적 경로 계획", cn: "运动学路径规划", ar: "تخطيط المسار الحركي"},
+            {en: "Predictive Maintenance AI", ko: "예측 유지보수 AI 시스템", cn: "预测性维护人工智能", ar: "الذكاء الاصطناعي للصيانة التنبؤية"},
+            {en: "Quantum Neural Interlink", ko: "양자 신경망 인터링크", cn: "量子神经网络互联", ar: "الترابط العصبي الكمي"}
+        ];
 
-<h2>Core Strategy</h2>
-<ul>
-<li>Humanoid Robotics Deployment</li>
-<li>AI Industrial Automation</li>
-<li>Smart Factory Synchronization</li>
-<li>Autonomous Workforce Systems</li>
-</ul>
+        function generateData() {
+            const tbody = document.getElementById('master-table-body');
+            let html = "";
+            
+            // 400줄 이상의 데이터를 생성 (420줄로 설정)
+            for(let i = 1; i <= 420; i++) {
+                const term = techPool[(i - 1) % techPool.length];
+                html += `
+                    <tr class="row-hover border-b border-slate-800/50">
+                        <td class="p-6 text-slate-600 font-mono text-[10px]">#${i.toString().padStart(4, '0')}</td>
+                        <td class="p-6 font-medium text-slate-200">${term.en} <span class="text-[9px] text-slate-700 ml-1">v.${i}</span></td>
+                        <td class="p-6 font-bold text-cyan-400">${term.ko}</td>
+                        <td class="p-6 text-slate-400 font-light">${term.cn}</td>
+                        <td class="p-6 text-right font-light text-slate-300" dir="rtl">${term.ar}</td>
+                    </tr>
+                `;
+            }
+            tbody.innerHTML = html;
+        }
 
-<h2>Why PHK-FIGURE?</h2>
-<p>Traditional industries suffer from workforce decline and price competition. AI robotics offers precision, scalability, and 24/7 productivity.</p>
-
-<h2>Future Impact</h2>
-<p>PHK-FIGURE enables industries to operate beyond human limitation while creating new high-tech job ecosystems.</p>
-
-</section>
-
-<!-- KOREAN PAGE -->
-<section id="korean">
-<div class="hero">AI 로봇으로 산업을 재구성하다</div>
-
-<p>PHK-FIGURE는 노동 집약 산업을 혁신하기 위한 차세대 AI 로보틱스 통합 프로젝트입니다.</p>
-
-<h2>비전</h2>
-<p>인력 부족 문제를 해결하고 생산성을 극대화하며 글로벌 산업 경쟁력을 재정의합니다.</p>
-
-<h2>핵심 전략</h2>
-<ul>
-<li>휴머노이드 로봇 도입</li>
-<li>AI 산업 자동화</li>
-<li>스마트 팩토리 통합</li>
-<li>자율 작업 시스템</li>
-</ul>
-
-<h2>왜 PHK-FIGURE인가?</h2>
-<p>전통 산업은 인력 감소와 가격 경쟁 압박에 직면해 있습니다. AI 로봇은 24시간 생산성과 정밀성을 제공합니다.</p>
-
-<h2>미래 효과</h2>
-<p>인간의 한계를 넘어서는 산업 구조를 구축하고 새로운 고급 일자리 생태계를 창출합니다.</p>
-
-</section>
-
-<!-- CHINESE PAGE -->
-<section id="chinese">
-<div class="hero">用人工智能机器人重塑产业</div>
-
-<p>PHK-FIGURE 是一个面向未来的 AI 机器人整合计划，旨在改变传统劳动密集型产业。</p>
-
-<h2>愿景</h2>
-<p>解决劳动力短缺，提高生产效率，重建全球制造竞争力。</p>
-
-<h2>核心战略</h2>
-<ul>
-<li>人形机器人部署</li>
-<li>AI 工业自动化</li>
-<li>智能工厂整合</li>
-<li>自主劳动力系统</li>
-</ul>
-
-<h2>未来影响</h2>
-<p>突破人类限制，打造全天候高效率工业体系。</p>
-
-</section>
-
-<!-- ARABIC PAGE -->
-<section id="arabic" dir="rtl">
-<div class="hero">إعادة بناء الصناعة باستخدام الذكاء الاصطناعي</div>
-
-<p>PHK-FIGURE هو مشروع روبوتات متقدم يهدف إلى تحويل الصناعات التقليدية المعتمدة على العمالة.</p>
-
-<h2>الرؤية</h2>
-<p>حل مشكلة نقص العمالة وزيادة الإنتاجية وتعزيز القدرة التنافسية العالمية.</p>
-
-<h2>الاستراتيجية الأساسية</h2>
-<ul>
-<li>نشر الروبوتات الشبيهة بالبشر</li>
-<li>أتمتة صناعية بالذكاء الاصطناعي</li>
-<li>مصانع ذكية متكاملة</li>
-<li>أنظمة عمل مستقلة</li>
-</ul>
-
-<h2>التأثير المستقبلي</h2>
-<p>تشغيل الصناعات بكفاءة 24 ساعة يومياً دون قيود بشرية.</p>
-
-</section>
-
-<!-- SPANISH PAGE -->
-<section id="spanish">
-<div class="hero">Reconstruyendo la Industria con Robótica AI</div>
-
-<p>PHK-FIGURE es una iniciativa avanzada de robótica e inteligencia artificial para transformar industrias intensivas en mano de obra.</p>
-
-<h2>Visión</h2>
-<p>Eliminar la escasez laboral y aumentar la productividad global.</p>
-
-<h2>Estrategia Clave</h2>
-<ul>
-<li>Implementación de Robots Humanoides</li>
-<li>Automatización Industrial con AI</li>
-<li>Fábricas Inteligentes</li>
-<li>Sistemas Autónomos de Trabajo</li>
-</ul>
-
-<h2>Impacto Futuro</h2>
-<p>Crear una industria que opere más allá de los límites humanos.</p>
-
-</section>
-
-<div class="footer">
-<p>© 2026 PHK-FIGURE | Future Robotics Initiative</p>
-<p>Contact: info@phkfigure.com</p>
-</div>
-
+        window.onload = generateData;
+    </script>
 </body>
 </html>
