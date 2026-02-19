@@ -1,117 +1,189 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HK-FIGURE | POSCO-AI INTEGRATION STRATEGY</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Noto+Sans+KR:wght@300;400;700&display=swap');
-        :root { --posco-blue: #005aab; --hk-cyan: #22d3ee; --deep-dark: #010409; }
-        body { background-color: var(--deep-dark); color: #e6edf3; font-family: 'Noto Sans KR', sans-serif; overflow-x: hidden; }
-        .font-orbitron { font-family: 'Orbitron', sans-serif; }
-        .glass-nav { background: rgba(1, 4, 9, 0.85); backdrop-filter: blur(15px); border-bottom: 1px solid #30363d; position: sticky; top: 0; z-index: 1000; }
-        .status-dot { height: 8px; width: 8px; border-radius: 50%; display: inline-block; background-color: #238636; box-shadow: 0 0 10px #238636; }
-        .data-table-container { background: #0d1117; border: 1px solid #30363d; border-radius: 12px; }
-        .row-item:hover { background: rgba(34, 211, 238, 0.05); transition: 0.2s; border-left: 4px solid var(--hk-cyan); }
-        .gradient-text { background: linear-gradient(90deg, #fff, #22d3ee); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        ::-webkit-scrollbar { width: 4px; }
-        ::-webkit-scrollbar-thumb { background: #30363d; border-radius: 10px; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HK-FIGURE Global Strategy</title>
+<style>
+body{
+    margin:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:#0b0f1a;
+    color:white;
+    line-height:1.6;
+}
+header{
+    background:linear-gradient(90deg,#111,#1c2a48);
+    padding:40px;
+    text-align:center;
+}
+section{
+    padding:60px 10%;
+    border-bottom:1px solid rgba(255,255,255,0.1);
+}
+h1,h2{
+    color:#4da3ff;
+}
+.lang{
+    margin-top:30px;
+    padding:20px;
+    background:#111827;
+    border-radius:10px;
+}
+footer{
+    padding:40px;
+    text-align:center;
+    background:#000;
+}
+</style>
 </head>
-<body class="min-h-screen">
 
-    <nav class="glass-nav p-5 px-10 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-            <div class="p-2 bg-white rounded flex items-center justify-center shadow-[0_0_20px_rgba(255,255,255,0.2)]">
-                <span class="font-orbitron font-black text-black text-xl italic">HK</span>
-            </div>
-            <div>
-                <h1 class="font-orbitron text-xl font-black tracking-[4px] text-white">HK-FIGURE <span class="text-cyan-400">CORP</span></h1>
-                <div class="flex items-center gap-2">
-                    <span class="status-dot"></span>
-                    <p class="text-[9px] text-slate-500 uppercase tracking-widest font-bold">Strategy: POSCO Acquisition Phase</p>
-                </div>
-            </div>
-        </div>
-        <div class="text-right">
-            <p class="text-[10px] text-slate-500 font-mono uppercase tracking-tighter">Acquisition Headquarter</p>
-            <a href="mailto:info@hkfigure.com" class="text-sm font-bold text-cyan-400 hover:text-white transition">info@hkfigure.com</a>
-        </div>
-    </nav>
+<body>
 
-    <header class="py-24 px-8 text-center bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900 via-transparent to-transparent">
-        <h2 class="text-5xl md:text-7xl font-black mb-8 font-orbitron leading-tight gradient-text">
-            POSCO FIRST <br> <span class="text-white">THEN</span> FIGURE AI
-        </h2>
-        <p class="max-w-4xl mx-auto text-slate-400 text-lg md:text-xl leading-relaxed mb-12">
-            **전략적 우선순위:** 대한민국 기간산업의 상징인 **포스코**를 선제적 인수하여 강력한 현금 흐름과 제조 기지를 확보합니다. 
-            이후 포스코의 인프라를 기반으로 **Figure AI**를 인수, 인류 문명을 재설계하는 글로벌 로보틱스 제국을 완성합니다.
-        </p>
-        <div class="flex justify-center gap-4 text-[11px] font-mono text-cyan-500">
-            <span class="border border-cyan-900 px-3 py-1 rounded-full">#STEEL_TO_ROBOT</span>
-            <span class="border border-cyan-900 px-3 py-1 rounded-full">#QUANTUM_CONTROL</span>
-            <span class="border border-cyan-900 px-3 py-1 rounded-full">#GLOBAL_CONQUEST</span>
-        </div>
-    </header>
+<header>
+<h1>HK-FIGURE Strategic Acquisition Vision</h1>
+<p>Transforming Global Industry Through Strategic Integration</p>
+<p>Contact: info@hkfigure.com</p>
+</header>
 
-    <main class="max-w-[1500px] mx-auto px-6 pb-32">
-        <div class="data-table-container overflow-hidden">
-            <div class="overflow-x-auto overflow-y-auto max-h-[900px]">
-                <table class="w-full text-left border-collapse">
-                    <thead class="bg-slate-900 text-slate-500 text-[10px] uppercase tracking-[2px] font-bold">
-                        <tr>
-                            <th class="p-6 border-b border-slate-800">Index ID</th>
-                            <th class="p-6 border-b border-slate-800">English Technology Node</th>
-                            <th class="p-6 border-b border-slate-800">한국어 전략 노드</th>
-                            <th class="p-6 border-b border-slate-800">中文技术节点</th>
-                            <th class="p-6 border-b border-slate-800 text-right">العقدة التقنية</th>
-                        </tr>
-                    </thead>
-                    <tbody id="acquisition-data" class="text-sm">
-                        </tbody>
-                </table>
-            </div>
-        </div>
-    </main>
+<section>
+<h2>1. Executive Overview (English)</h2>
+<div class="lang">
+<p>HK-FIGURE is preparing a transformative industrial strategy centered on the acquisition of POSCO, one of the world's most respected steel producers. This strategic move aims to redefine advanced manufacturing, energy infrastructure, robotics, quantum materials, and sustainable industrial ecosystems.</p>
 
-    <footer class="p-10 border-t border-slate-900 text-center">
-        <p class="font-orbitron text-xs text-slate-600 tracking-[5px] uppercase mb-4">Master Plan: Steel Intelligence Synergy</p>
-        <p class="text-slate-800 text-[9px] font-mono">© 2026 HK-FIGURE AI CORP. STRATEGIC OPERATIONS: info@hkfigure.com</p>
-    </footer>
+<p>By integrating POSCO’s advanced metallurgical capabilities with HK-FIGURE’s innovation-driven ecosystem in AI, robotics, fusion energy systems, space engineering, bio-material science, and digital banking infrastructure, the combined entity will become a vertically integrated global powerhouse.</p>
 
-    <script>
-        const combinedPool = [
-            {en: "Steel Infrastructure Acquisition", ko: "포스코 제철 인프라 인수 선점", cn: "收购浦项制铁基础设施", ar: "الاستحواذ على البنية التحتية لشركة بوسكو"},
-            {en: "Humanoid Steel Fabrication", ko: "휴머노이드 기반 특수강 제작", cn: "基于类人机器人的特种钢制造", ar: "صناعة الصلب الخاص بالروبوتات"},
-            {en: "Quantum Logistics Integration", ko: "양자 기반 포스코 물류 통합", cn: "基于量子的物流整合", ar: "تكامل اللوجستيات الكمية"},
-            {en: "Figure AI Financial Leverage", ko: "포스코 자본 기반 Figure AI 인수", cn: "利用浦项资本收购 Figure AI", ar: "الاستحواذ على Figure AI برأس مال بوسكو"},
-            {en: "Autonomous Mine-to-Mill", ko: "채굴부터 제련까지 전과정 자율화", cn: "采矿到冶炼全过程自动化", ar: "أتمتة عملية التعدين والصهر بالكامل"},
-            {en: "AI-Driven Material Discovery", ko: "AI 기반 차세대 초강력 합금 개발", cn: "AI 驱动的下一代超强合金开发", ar: "تطوير سبائك الجيل القادم بالذكاء الاصطناعي"},
-            {en: "Robotic Maintenance Unit", ko: "제철소 전용 로봇 정비 유닛", cn: "钢厂专用机器人维护单元", ar: "وحدة صيانة الروبوتات للمصنع"},
-            {en: "Global Supply Chain Dominance", ko: "글로벌 철강-AI 공급망 장악", cn: "掌控全球钢铁-AI供应链", ar: "السيطرة على سلسلة توريد الصلب والذكاء الاصطناعي"},
-            {en: "Quantum Structural Analysis", ko: "양자 컴퓨터 활용 구조 강성 분석", cn: "利用量子计算机进行结构分析", ar: "تحليل الصلابة الهيكلية بالكم"},
-            {en: "HK-FIGURE Integrated HQ", ko: "HK-FIGURE 통합 글로벌 본부 구축", cn: "建立 HK-FIGURE 整合全球总部", ar: "إنشاء مقر عالمي متكامل لـ HK-FIGURE"}
-        ];
+<p>The acquisition will enable synergy across raw materials, smart manufacturing, energy transition metals, green hydrogen infrastructure, smart cities, and next-generation aerospace components.</p>
 
-        function init() {
-            const body = document.getElementById('acquisition-data');
-            let rows = "";
-            for(let i=1; i<=450; i++) { // 400줄 이상 보장
-                const item = combinedPool[(i-1) % combinedPool.length];
-                rows += `
-                    <tr class="row-item border-b border-slate-800/30">
-                        <td class="p-5 text-slate-700 font-mono text-[10px]">HK-P-${i.toString().padStart(4, '0')}</td>
-                        <td class="p-5 text-slate-300 font-medium">${item.en}</td>
-                        <td class="p-5 text-cyan-400 font-bold">${item.ko} <span class="text-[9px] text-slate-700">LV.${i}</span></td>
-                        <td class="p-5 text-slate-500 font-light">${item.cn}</td>
-                        <td class="p-5 text-right text-slate-400 font-light" dir="rtl">${item.ar}</td>
-                    </tr>
-                `;
-            }
-            body.innerHTML = rows;
-        }
-        window.onload = init;
-    </script>
+<p>HK-FIGURE envisions a new industrial renaissance powered by sustainable steel, AI automation, quantum-enhanced materials research, and zero-carbon energy systems.</p>
+
+<p>Strategic Pillars:</p>
+<ul>
+<li>Advanced Materials & Quantum Metallurgy</li>
+<li>Green Hydrogen & Fusion Infrastructure</li>
+<li>Robotics & Automated Smart Factories</li>
+<li>Space & Aerospace Structural Components</li>
+<li>Digital Finance & Industrial Blockchain Systems</li>
+<li>Carbon Neutral Manufacturing Leadership</li>
+</ul>
+
+<p>The synergy between HK-FIGURE and POSCO will unlock multi-trillion-dollar value creation through technological integration and sustainable global infrastructure development.</p>
+</div>
+</section>
+
+<section>
+<h2>2. Strategic Synergy Framework (English)</h2>
+<div class="lang">
+<p>Steel remains the backbone of civilization. By combining HK-FIGURE’s innovation engine with POSCO’s industrial backbone, we create a hybrid industrial-intelligence corporation.</p>
+
+<p>Key Synergies Include:</p>
+
+<p><strong>1. Smart Steel + AI Robotics:</strong> Fully autonomous factories driven by AI systems.</p>
+<p><strong>2. Green Steel Production:</strong> Hydrogen-based reduction processes aligned with carbon neutrality goals.</p>
+<p><strong>3. Quantum Materials:</strong> Development of superconducting alloys for quantum computing infrastructure.</p>
+<p><strong>4. Space Infrastructure:</strong> High-strength alloys for orbital stations and interplanetary logistics.</p>
+<p><strong>5. Fusion Reactor Structures:</strong> Advanced heat-resistant steel for artificial sun (fusion) projects.</p>
+
+<p>Financial Strategy:</p>
+<ul>
+<li>Asset optimization and vertical integration</li>
+<li>Global expansion through sovereign partnerships</li>
+<li>Digital asset tokenization for industrial funding</li>
+<li>Infrastructure-backed global bonds</li>
+</ul>
+
+<p>This merger accelerates industrial evolution while strengthening supply chain resilience.</p>
+</div>
+</section>
+
+<section>
+<h2>3. 한국어 전략 개요</h2>
+<div class="lang">
+<p>HK-FIGURE는 세계적인 철강 기업인 포스코 인수를 통해 글로벌 산업 구조를 재편하고자 합니다.</p>
+
+<p>포스코의 고급 제철 기술과 HK-FIGURE의 AI·로봇·핵융합·우주산업·바이오·디지털 금융 기술을 결합하여 완전한 수직 통합형 산업 생태계를 구축합니다.</p>
+
+<p>핵심 시너지:</p>
+<ul>
+<li>AI 기반 스마트 제철소</li>
+<li>수소환원 제철을 통한 탄소중립 실현</li>
+<li>양자소재용 특수합금 개발</li>
+<li>우주 구조물용 초강력 합금</li>
+<li>핵융합 발전소 구조용 고내열 소재</li>
+</ul>
+
+<p>이는 단순한 인수가 아니라 산업혁명의 재정의입니다.</p>
+</div>
+</section>
+
+<section>
+<h2>4. 중국어 전략</h2>
+<div class="lang">
+<p>HK-FIGURE 计划通过收购浦项制铁（POSCO）打造全球工业整合平台。</p>
+
+<p>结合先进钢铁技术与人工智能、机器人、核聚变、航天工业，实现可持续发展的工业体系。</p>
+
+<p>核心协同：</p>
+<ul>
+<li>智能钢铁工厂</li>
+<li>绿色氢能炼钢</li>
+<li>量子材料研究</li>
+<li>航天结构材料</li>
+<li>可持续能源基础设施</li>
+</ul>
+
+<p>该战略将推动全球工业升级。</p>
+</div>
+</section>
+
+<section>
+<h2>5. العربية</h2>
+<div class="lang">
+<p>تسعى HK-FIGURE إلى الاستحواذ على شركة POSCO لبناء منظومة صناعية عالمية متكاملة.</p>
+
+<p>من خلال دمج تقنيات الفولاذ المتقدمة مع الذكاء الاصطناعي والطاقة النظيفة والروبوتات، سيتم إنشاء اقتصاد صناعي مستدام.</p>
+
+<ul>
+<li>مصانع فولاذ ذكية</li>
+<li>إنتاج صديق للبيئة</li>
+<li>مواد فائقة للقوة لصناعة الفضاء</li>
+<li>بنية تحتية لطاقة الاندماج النووي</li>
+</ul>
+
+<p>هذه الخطوة ستعيد تشكيل مستقبل الصناعة العالمية.</p>
+</div>
+</section>
+
+<section>
+<h2>6. ESG & Sustainability</h2>
+<div class="lang">
+<p>HK-FIGURE commits to achieving Net-Zero Carbon by 2040.</p>
+<p>Hydrogen steel, renewable energy grids, and circular manufacturing systems will define the next industrial era.</p>
+<p>Through responsible governance and transparent financial systems, HK-FIGURE will align global investors with sustainable value creation.</p>
+</div>
+</section>
+
+<section>
+<h2>7. Future Vision 2050</h2>
+<div class="lang">
+<p>By 2050, HK-FIGURE + POSCO will lead:</p>
+<ul>
+<li>Global Green Steel Markets</li>
+<li>Space Structural Materials</li>
+<li>Fusion Reactor Engineering</li>
+<li>Quantum Industrial Infrastructure</li>
+<li>AI-driven Mega Factories</li>
+</ul>
+
+<p>The acquisition marks the beginning of a new industrial civilization.</p>
+</div>
+</section>
+
+<footer>
+<p>HK-FIGURE Global Strategy</p>
+<p>Contact: info@hkfigure.com</p>
+<p>© 2026 HK-FIGURE. All Rights Reserved.</p>
+</footer>
+
 </body>
 </html>
