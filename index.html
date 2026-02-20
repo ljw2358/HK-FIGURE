@@ -1,171 +1,227 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HK FIGURE × POSCO | Global Robotics Vision</title>
+<title>HK FIGURE - Global Robotics Leader</title>
 
 <style>
 body{
     margin:0;
-    font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(135deg,#000428,#004e92);
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#000000,#0f2027,#203a43,#2c5364);
     color:white;
-    text-align:center;
 }
 
-header{
-    padding:60px 20px 30px 20px;
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:60px 30px;
 }
 
 h1{
     font-size:48px;
-    margin-bottom:15px;
+    background: linear-gradient(90deg,#00f5ff,#00ff94,#00c3ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    margin-bottom:10px;
 }
 
 .subtitle{
-    font-size:20px;
-    color:#00e0ff;
+    font-size:18px;
+    color:#cccccc;
+    margin-bottom:40px;
+}
+
+.section{
+    margin-bottom:50px;
+}
+
+.section h2{
+    color:#00ffe7;
+    margin-bottom:15px;
+    border-bottom:1px solid rgba(255,255,255,0.2);
+    padding-bottom:8px;
+}
+
+ul{
+    line-height:1.8;
 }
 
 .language-buttons{
-    margin:30px 0;
+    position:absolute;
+    top:20px;
+    right:30px;
 }
 
 .language-buttons button{
-    background:#00e0ff;
-    border:none;
-    padding:12px 20px;
-    margin:8px;
-    font-size:16px;
-    font-weight:bold;
-    border-radius:30px;
+    background:transparent;
+    border:1px solid #00ffe7;
+    color:#00ffe7;
+    padding:6px 12px;
+    margin-left:6px;
     cursor:pointer;
-    transition:0.3s;
 }
 
 .language-buttons button:hover{
-    background:white;
-    color:#004e92;
+    background:#00ffe7;
+    color:black;
 }
 
-.content{
-    max-width:1000px;
-    margin:40px auto;
-    padding:40px;
-    background:rgba(0,0,0,0.4);
-    border-radius:20px;
-    line-height:1.9;
-    font-size:20px;
-}
-
-.highlight{
-    margin-top:30px;
-    font-size:26px;
-    font-weight:bold;
-    color:#00e0ff;
-}
-
-.hidden{
-    display:none;
+.footer{
+    margin-top:60px;
+    font-size:14px;
+    color:#aaaaaa;
+    border-top:1px solid rgba(255,255,255,0.2);
+    padding-top:20px;
 }
 </style>
 
 <script>
-function showLanguage(lang){
-    document.getElementById("en").classList.add("hidden");
-    document.getElementById("ko").classList.add("hidden");
-    document.getElementById("cn").classList.add("hidden");
-    document.getElementById("ar").classList.add("hidden");
+function changeLanguage(lang){
 
-    document.getElementById(lang).classList.remove("hidden");
+const content = {
+
+ko: {
+title:"HK FIGURE",
+subtitle:"POSCO와 합작으로 세계 제일의 로봇 기업으로 도약",
+overview:"HK FIGURE는 차세대 AI 로보틱스 기술과 POSCO의 글로벌 철강·소재 기술력을 결합하여 미래 산업을 선도하는 글로벌 로봇 플랫폼 기업입니다.",
+vision:"비전 2035",
+visionText:"산업용·물류·의료·국방·우주 로봇 분야에서 세계 1위 달성",
+core:"핵심 역량",
+list:[
+"AI 자율 제어 시스템",
+"초정밀 모터 및 구동 기술",
+"POSCO 첨단 강재 기반 로봇 프레임",
+"스마트 팩토리 자동화 솔루션",
+"글로벌 공급망 및 인프라 구축"
+],
+goal:"쭉 가즈아 — 세계 로봇 산업의 중심으로!"
+},
+
+en: {
+title:"HK FIGURE",
+subtitle:"Joint Venture with POSCO – Toward the World's No.1 Robotics Company",
+overview:"HK FIGURE integrates next-generation AI robotics with POSCO’s global advanced materials expertise to lead the future of intelligent automation.",
+vision:"Vision 2035",
+visionText:"Achieve Global No.1 in Industrial, Logistics, Medical, Defense and Space Robotics",
+core:"Core Competencies",
+list:[
+"AI Autonomous Control Systems",
+"Ultra-Precision Motor Technology",
+"Advanced Steel-based Robotic Structures",
+"Smart Factory Automation",
+"Global Robotics Infrastructure Network"
+],
+goal:"Let's Go All The Way – To Global Robotics Supremacy!"
+},
+
+zh: {
+title:"HK FIGURE",
+subtitle:"与POSCO合资 打造全球第一机器人企业",
+overview:"HK FIGURE结合新一代人工智能机器人技术与POSCO先进材料技术，引领未来智能自动化产业。",
+vision:"2035愿景",
+visionText:"在工业、物流、医疗、国防与太空机器人领域实现全球第一",
+core:"核心能力",
+list:[
+"AI自主控制系统",
+"超精密电机技术",
+"先进钢材机器人结构",
+"智能工厂自动化解决方案",
+"全球机器人产业网络"
+],
+goal:"一路向前 成为全球机器人领袖！"
+},
+
+ar: {
+title:"HK FIGURE",
+subtitle:"شراكة مع POSCO نحو الريادة العالمية في صناعة الروبوتات",
+overview:"تجمع HK FIGURE بين تقنيات الذكاء الاصطناعي المتقدمة وخبرة POSCO في المواد المتطورة لقيادة مستقبل الأتمتة الذكية.",
+vision:"رؤية 2035",
+visionText:"تحقيق المركز الأول عالمياً في الروبوتات الصناعية والطبية والدفاعية والفضائية",
+core:"القدرات الأساسية",
+list:[
+"أنظمة تحكم ذاتية بالذكاء الاصطناعي",
+"تقنية محركات فائقة الدقة",
+"هياكل روبوتية من فولاذ متطور",
+"حلول المصانع الذكية",
+"شبكة بنية تحتية روبوتية عالمية"
+],
+goal:"إلى القمة… نحو سيادة عالمية في الروبوتات!"
+}
+};
+
+document.getElementById("title").innerText=content[lang].title;
+document.getElementById("subtitle").innerText=content[lang].subtitle;
+document.getElementById("overview").innerText=content[lang].overview;
+document.getElementById("visionTitle").innerText=content[lang].vision;
+document.getElementById("visionText").innerText=content[lang].visionText;
+document.getElementById("coreTitle").innerText=content[lang].core;
+document.getElementById("goal").innerText=content[lang].goal;
+
+let ul=document.getElementById("coreList");
+ul.innerHTML="";
+content[lang].list.forEach(item=>{
+    let li=document.createElement("li");
+    li.innerText=item;
+    ul.appendChild(li);
+});
+
+if(lang=="ar"){
+document.body.style.direction="rtl";
+}else{
+document.body.style.direction="ltr";
+}
+
 }
 </script>
-
 </head>
+
 <body>
 
-<header>
-<h1>HK FIGURE × POSCO</h1>
-<div class="subtitle">Steel Meets Intelligence — Global No.1 Robotics Company</div>
-
 <div class="language-buttons">
-<button onclick="showLanguage('en')">English</button>
-<button onclick="showLanguage('ko')">한국어</button>
-<button onclick="showLanguage('cn')">中文</button>
-<button onclick="showLanguage('ar')">العربية</button>
-</div>
-</header>
-
-<!-- ENGLISH -->
-<div id="en" class="content">
-HK FIGURE joins forces with POSCO to build the world’s No.1 robotics company.
-By combining ultra-high-strength steel technology with advanced AI robotics systems,
-we create next-generation industrial, humanoid, defense, and space robotics platforms.
-
-POSCO provides green hydrogen steel, advanced battery materials,
-and global infrastructure. HK FIGURE delivers AI operating systems,
-robotic semiconductors, and autonomous control intelligence.
-
-Steel becomes intelligence. Machines become autonomous.
-The future of robotics begins here.
-
-<div class="highlight">
-Steel Meets Intelligence — Let’s Go All The Way 🚀
-</div>
+<button onclick="changeLanguage('ko')">한국어</button>
+<button onclick="changeLanguage('en')">English</button>
+<button onclick="changeLanguage('zh')">中文</button>
+<button onclick="changeLanguage('ar')">العربية</button>
 </div>
 
-<!-- KOREAN -->
-<div id="ko" class="content hidden">
-HK FIGURE는 POSCO와 함께 세계 제1의 로봇기업을 향해 나아갑니다.
-초고강도 철강 기술과 인공지능 로봇 시스템을 결합하여
-산업·휴머노이드·국방·우주 로봇 플랫폼을 구축합니다.
+<div class="container">
 
-POSCO는 친환경 수소제철과 2차전지 소재,
-글로벌 생산 인프라를 제공합니다.
-HK FIGURE는 로봇 OS와 자율제어 AI 기술을 개발합니다.
-
-강철은 지능이 되고, 공장은 스스로 움직입니다.
-로봇 혁명의 시작입니다.
-
-<div class="highlight">
-강철에 영혼을 넣다 — 쭉 가즈아 🚀
-</div>
+<h1 id="title">HK FIGURE</h1>
+<div class="subtitle" id="subtitle">
+POSCO와 합작으로 세계 제일의 로봇 기업으로 도약
 </div>
 
-<!-- CHINESE -->
-<div id="cn" class="content hidden">
-HK FIGURE 与 POSCO 携手打造全球第一的机器人企业。
-通过融合超高强度钢铁技术与人工智能系统，
-构建工业、人形、国防和太空机器人平台。
-
-POSCO 提供绿色氢能炼钢技术、电池材料和全球制造网络。
-HK FIGURE 提供机器人操作系统与自主控制人工智能。
-
-钢铁拥有智慧，机器实现自主。
-全球机器人新时代从这里开始。
-
-<div class="highlight">
-钢铁与智能融合 —— 一路向前 🚀
-</div>
+<div class="section">
+<h2>Overview</h2>
+<p id="overview"></p>
 </div>
 
-<!-- ARABIC -->
-<div id="ar" class="content hidden" dir="rtl">
-تتحد HK FIGURE مع POSCO لبناء الشركة الأولى عالمياً في الروبوتات.
-من خلال دمج تقنيات الفولاذ فائقة القوة مع أنظمة الذكاء الاصطناعي،
-نطور منصات روبوتية صناعية وبشرية ودفاعية وفضائية.
-
-توفر POSCO تقنيات الفولاذ الأخضر ومواد البطاريات
-وشبكة تصنيع عالمية، بينما تقدم HK FIGURE
-أنظمة تشغيل روبوتية وتحكم ذاتي متقدم.
-
-الفولاذ يصبح ذكاءً، والمستقبل يبدأ الآن.
-
-<div class="highlight">
-الفولاذ يلتقي بالذكاء — انطلقوا نحو القمة 🚀
+<div class="section">
+<h2 id="visionTitle"></h2>
+<p id="visionText"></p>
 </div>
+
+<div class="section">
+<h2 id="coreTitle"></h2>
+<ul id="coreList"></ul>
 </div>
+
+<div class="section">
+<h2>Mission</h2>
+<p id="goal"></p>
+</div>
+
+<div class="footer">
+© 2026 HK FIGURE | Global Robotics Innovation Platform
+</div>
+
+</div>
+
+<script>
+changeLanguage('ko');
+</script>
 
 </body>
 </html>
