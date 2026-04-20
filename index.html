@@ -11,178 +11,208 @@
             --neon-st: #00FFCC; --neon-lp: #FF00FF; --neon-green: #39FF14; --neon-blue: #00BFFF;
             --glass: rgba(255, 255, 255, 0.05);
         }
-        body { margin: 0; padding: 0; background: var(--bg); color: white; font-family: 'Segoe UI', 'Nanum Gothic', sans-serif; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; }
+        body { margin: 0; padding: 0; background: var(--bg); color: white; font-family: 'Consolas', 'Nanum Gothic', monospace; display: flex; flex-direction: column; align-items: center; overflow-x: hidden; }
         .container { width: 100%; max-width: 550px; padding: 20px; box-sizing: border-box; padding-bottom: 120px; }
         
-        /* 상단 바 및 언어 선택 */
-        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; position: sticky; top: 0; z-index: 2000; background: rgba(0,0,0,0.9); padding: 10px; border-bottom: 1px solid #333; width: 100%; max-width: 550px; }
+        .top-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; position: sticky; top: 0; z-index: 2000; background: rgba(0,0,0,0.8); padding: 10px; border-bottom: 1px solid #333; }
         #langSelect { background: #111; color: var(--gold); border: 2px solid var(--gold); padding: 8px; border-radius: 8px; font-weight: bold; cursor: pointer; }
 
         header { text-align: center; margin-bottom: 30px; }
-        .title { font-size: 2.5rem; font-weight: 900; color: var(--gold); margin: 0; text-shadow: 0 0 15px rgba(255,215,0,0.5); }
-        #txt-status { font-weight: bold; margin-top: 10px; font-size: 0.9rem; color: var(--neon-st); letter-spacing: 2px; }
+        .title { font-size: 2.5rem; font-weight: 900; color: var(--gold); margin: 0; text-shadow: 0 0 25px rgba(255,215,0,0.8); letter-spacing: -1px; }
+        #txt-status { font-weight: bold; margin-top: 10px; font-size: 1rem; color: var(--neon-st); text-transform: uppercase; }
        
-        /* 자산 대시보드 - 애니메이션 제거 및 고정 */
-        .asset-box { background: var(--card); border: 2px solid #222; border-radius: 25px; padding: 30px 25px; text-align: center; margin-bottom: 25px; box-shadow: inset 0 0 20px rgba(255,255,255,0.02); }
-        .pi-display { font-size: 3.5rem; font-weight: bold; margin: 10px 0; color: #fff; font-variant-numeric: tabular-nums; }
-        .gcv-box { background: rgba(57, 255, 20, 0.1); color: var(--neon-green); padding: 12px 30px; border: 1px solid var(--neon-green); border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2rem; margin-top: 10px; }
+        .asset-box { background: var(--card); border: 1px solid #222; border-radius: 25px; padding: 25px; text-align: center; margin-bottom: 25px; position: relative; overflow: hidden; }
+        .pi-display { font-size: 3.2rem; font-weight: bold; margin: 10px 0; color: #fff; font-variant-numeric: tabular-nums; letter-spacing: -2px; }
+        .gcv-box { background: rgba(57, 255, 20, 0.1); color: var(--neon-green); padding: 12px 30px; border: 1px solid var(--neon-green); border-radius: 50px; display: inline-block; font-weight: bold; font-size: 1.2rem; }
 
-        /* 수치 그리드 */
         .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 25px; }
         .stat-card { background: var(--glass); border-radius: 15px; padding: 15px; border: 1px solid #333; text-align: center; }
         .stat-label { font-size: 0.75rem; color: #888; margin-bottom: 5px; text-transform: uppercase; }
-        .stat-val { font-size: 1.3rem; font-weight: bold; }
+        .stat-val { font-size: 1.3rem; font-weight: bold; font-variant-numeric: tabular-nums; }
 
-        /* 액션 버튼 */
+        .dex-panel { background: #151515; border-radius: 30px; padding: 25px; border: 2px solid var(--gold); margin-bottom: 30px; display: none; box-shadow: 0 0 40px rgba(255,215,0,0.2); }
+        .swap-input-group { background: #000; border-radius: 15px; padding: 15px; margin-bottom: 10px; border: 1px solid #333; }
+        .swap-input-group input { background: none; border: none; color: white; font-size: 1.8rem; font-weight: bold; width: 60%; outline: none; }
+        .swap-token { color: var(--gold); font-weight: bold; font-size: 1.1rem; }
+
         .action-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
         .btn-main { padding: 18px 5px; border-radius: 15px; border: none; font-weight: 900; cursor: pointer; transition: 0.2s; font-size: 0.9rem; }
-        .btn-main:hover { filter: brightness(1.2); }
+        .btn-main:hover { transform: scale(1.05); filter: brightness(1.2); }
 
-        /* 아이콘 메뉴 */
         .icon-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
         .icon-item { background: var(--card); border: 1px solid #222; border-radius: 20px; padding: 20px 10px; text-align: center; cursor: pointer; transition: 0.3s; }
-        .icon-item:hover { border-color: var(--neon-blue); background: #1a1a1a; }
-        .icon-item span { display: block; margin-top: 10px; font-size: 0.85rem; color: #ccc; font-weight: bold; }
+        .icon-item span { display: block; margin-top: 10px; font-size: 0.9rem; color: #ccc; font-weight: bold; }
 
-        /* AI CHAT & FAQ */
-        #chat-ui { display: none; position: fixed; bottom: 30px; right: 20px; left: 20px; height: 70vh; background: #0a0a0a; border: 2px solid var(--neon-lp); border-radius: 25px; z-index: 3001; flex-direction: column; overflow: hidden; box-shadow: 0 0 50px rgba(0,0,0,1); }
-        #chat-log { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
-        .chat-bubble { max-width: 85%; padding: 12px 18px; border-radius: 18px; font-size: 0.9rem; }
-        .ai { background: #222; align-self: flex-start; border-left: 4px solid var(--neon-lp); }
-        .user { background: var(--neon-blue); align-self: flex-end; }
-        .chat-input { display: flex; padding: 15px; background: #111; }
+        .faq-container { background: #080808; border-radius: 25px; padding: 20px; border: 1px solid #333; margin-bottom: 40px; display: none; }
+        .faq-item { border-bottom: 1px solid #222; padding: 15px 0; }
+        .faq-q { color: var(--gold); font-weight: bold; margin-bottom: 8px; cursor: pointer; font-size: 0.95rem; }
+        .faq-a { color: #aaa; font-size: 0.85rem; line-height: 1.5; display: none; }
+
+        #ai-trigger { position: fixed; bottom: 30px; right: 25px; width: 70px; height: 70px; background: var(--neon-lp); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; box-shadow: 0 0 30px var(--neon-lp); cursor: pointer; z-index: 3000; color: white; font-size: 1.5rem; animation: float 3s infinite; }
+        #chat-ui { display: none; position: fixed; bottom: 110px; right: 20px; width: 350px; height: 500px; background: #111; border: 2px solid var(--neon-lp); border-radius: 25px; z-index: 3001; flex-direction: column; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.9); }
+        #chat-log { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; background: #050505; }
+        .chat-bubble { max-width: 85%; padding: 12px 18px; border-radius: 18px; font-size: 0.9rem; line-height: 1.6; }
+        .ai { background: #222; align-self: flex-start; border-bottom-left-radius: 2px; border-left: 5px solid var(--neon-lp); }
+        .user { background: var(--neon-blue); align-self: flex-end; border-bottom-right-radius: 2px; }
+        .chat-input { display: flex; padding: 15px; background: #111; border-top: 1px solid #333; }
         #user-msg { flex: 1; background: #222; border: none; border-radius: 10px; color: white; padding: 12px; outline: none; }
-        
-        .faq-box { background: #080808; border-radius: 20px; padding: 15px; border: 1px solid #333; margin-bottom: 20px; display: none; }
-        .faq-q { color: var(--gold); font-weight: bold; cursor: pointer; padding: 10px 0; border-bottom: 1px solid #222; font-size: 0.9rem; }
 
-        #ai-trigger { position: fixed; bottom: 30px; right: 25px; width: 60px; height: 60px; background: var(--neon-lp); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; cursor: pointer; z-index: 3000; box-shadow: 0 0 20px var(--neon-lp); }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+        .scanline { position: absolute; width: 100%; height: 2px; background: rgba(57, 255, 20, 0.2); animation: scan 4s linear infinite; }
+        @keyframes scan { 0% { top: 0%; } 100% { top: 100%; } }
     </style>
 </head>
 <body>
 
 <div class="container">
     <div class="top-bar">
-        <span id="live-tag" style="color:red; font-size:0.8rem; font-weight:bold;">● LIVE MAINNET</span>
-        <select id="langSelect" onchange="changeLanguage()"></select>
+        <span style="color:red; font-size:0.7rem; font-weight:bold;">● LIVE MAINNET</span>
+        <select id="langSelect" onchange="translateUI()"></select>
     </div>
 
     <header>
         <h1 class="title">HK WORLD BANK</h1>
-        <div id="txt-status">SYSTEM OPERATIONAL</div>
+        <div id="txt-status">SYSTEM INITIALIZING...</div>
     </header>
 
     <div class="asset-box">
-        <div id="label-balance" style="font-size: 0.8rem; color:#888;">TOTAL TESTNET BALANCE</div>
+        <div class="scanline"></div>
+        <div id="lbl-balance" style="font-size: 0.8rem; color:#888;">TOTAL TESTNET BALANCE</div>
         <div class="pi-display"><span id="live-pi">412.3141</span> <span style="color:var(--gold)">Pi</span></div>
-        <div class="gcv-box">$ <span id="live-gcv">129,540,600</span> (GCV)</div>
+        <div id="lbl-gcv" class="gcv-box">$ <span id="live-gcv">129,540,600</span> (GCV)</div>
     </div>
 
     <div class="stats-grid">
-        <div class="stat-card"><div class="stat-label" id="lbl-stk">Staking APY</div><div class="stat-val" id="live-st" style="color:var(--neon-st);">17.42%</div></div>
-        <div class="stat-card"><div class="stat-label" id="lbl-lp">LP Rewards</div><div class="stat-val" id="live-lp" style="color:var(--neon-lp);">28.91%</div></div>
+        <div class="stat-card"><div id="lbl-st" class="stat-label">Staking APY</div><div class="stat-val" id="live-st" style="color:var(--neon-st);">17.42%</div></div>
+        <div class="stat-card"><div id="lbl-lp" class="stat-label">LP Rewards</div><div class="stat-val" id="live-lp" style="color:var(--neon-lp);">28.91%</div></div>
+        <div class="stat-card" style="grid-column: span 2;">
+            <div id="lbl-total-lp" class="stat-label">Global LP Liquidity</div>
+            <div class="stat-val" id="live-total-lp" style="color:var(--neon-green); font-size:1.6rem;">$ 88,432,159,375</div>
+        </div>
     </div>
 
     <div class="action-grid">
-        <button class="btn-main" id="btn-wallet" style="background:#fff;" onclick="alert('Wallet Connected')">WALLET</button>
-        <button class="btn-main" id="btn-dex" style="background:var(--gold);" onclick="alert('DEX Ready')">DEX SWAP</button>
-        <button class="btn-main" id="btn-node" style="background:var(--neon-green);" onclick="alert('Node Active')">NODE</button>
+        <button id="btn-wallet" class="btn-main" style="background:#fff; color:#000;" onclick="PiSDK.connect()">WALLET</button>
+        <button id="btn-dex" class="btn-main" style="background:var(--gold); color:#000;" onclick="toggleDex()">DEX SWAP</button>
+        <button id="btn-staking" class="btn-main" style="background:var(--neon-green); color:#000;" onclick="PiSDK.lp()">STAKING</button>
     </div>
 
     <div class="icon-grid">
-        <div class="icon-item">🚀<span id="m1">송금</span></div>
-        <div class="icon-item">🛒<span id="m2">결제</span></div>
-        <div class="icon-item">💰<span id="m3">예치</span></div>
-        <div class="icon-item">🏅<span id="m4">보상</span></div>
-        <div class="icon-item">🏦<span id="m5">UBI</span></div>
-        <div class="icon-item">🔄<span id="m6">전환</span></div>
+        <div class="icon-item" onclick="PiSDK.cmd('SEND')">🚀<span id="m1">송금</span></div>
+        <div class="icon-item" onclick="PiSDK.cmd('PAY')">🛒<span id="m2">결제</span></div>
+        <div class="icon-item" onclick="PiSDK.cmd('DEPO')">💰<span id="m3">예치</span></div>
+        <div class="icon-item" onclick="PiSDK.cmd('REWD')">🏅<span id="m4">보상</span></div>
+        <div class="icon-item" onclick="PiSDK.cmd('UBI')">🏦<span id="m5">UBI</span></div>
+        <div class="icon-item" onclick="PiSDK.cmd('EX')">🔄<span id="m6">전환</span></div>
     </div>
 
-    <button class="btn-main" id="btn-faq" style="width:100%; background:#333; color:white; margin-bottom:20px;" onclick="toggleFaq()">GLOBAL FAQ (50 LANGUAGES)</button>
-    <div id="faq-ui" class="faq-box"></div>
-
-    <div style="display:flex; gap:10px;">
-        <a href="https://www.youtube.com/@Hyekong2025" target="_blank" style="flex:1; background:#FF0000; padding:15px; text-align:center; border-radius:15px; text-decoration:none; color:white; font-weight:bold;">YOUTUBE</a>
-        <a href="https://www.tiktok.com/@hyekong2025" target="_blank" style="flex:1; background:#000; border:1px solid #fff; padding:15px; text-align:center; border-radius:15px; text-decoration:none; color:white; font-weight:bold;">TIKTOK</a>
-    </div>
+    <button id="btn-faq-trigger" class="btn-main" style="width:100%; background:linear-gradient(to right, #ff4d6d, #ff758c); color:white; margin-bottom:20px;" onclick="toggleFaq()">GLOBAL AI SUPPORT (FAQ 20)</button>
+    <div id="faq-ui" class="faq-container"></div>
 </div>
 
 <div id="ai-trigger" onclick="toggleChat()">AI</div>
 <div id="chat-ui">
     <div style="background:var(--neon-lp); padding:15px; font-weight:bold; display:flex; justify-content:space-between;">
-        <span id="chat-title">HKWB INTELLIGENCE</span>
+        <span>HKWB INTELLIGENCE</span>
         <span onclick="toggleChat()" style="cursor:pointer;">✕</span>
     </div>
     <div id="chat-log"></div>
     <div class="chat-input">
-        <input type="text" id="user-msg" placeholder="Command..." onkeypress="if(event.key==='Enter') sendMsg()">
-        <button onclick="sendMsg()" style="background:var(--neon-lp); border:none; color:white; padding:0 15px; border-radius:10px; margin-left:10px;">SEND</button>
+        <input type="text" id="user-msg" onkeypress="if(event.key==='Enter') sendMsg()">
+        <button id="btn-send" onclick="sendMsg()" style="background:var(--neon-lp); border:none; color:white; padding:0 15px; border-radius:10px; margin-left:10px; font-weight:bold;">SEND</button>
     </div>
 </div>
 
 <script>
-    /* 언어 데이터셋 (샘플 주요국) */
-    const langData = {
-        ko: { m1: "송금", m2: "결제", m3: "예치", m4: "보상", m5: "UBI", m6: "전환", balance: "총 테스트넷 잔액", wallet: "지갑연동", faq: "글로벌 FAQ (50개국어)", welcome: "혜공 형님, 시스템이 준비되었습니다." },
-        en: { m1: "Send", m2: "Pay", m3: "Deposit", m4: "Reward", m5: "UBI", m6: "Swap", balance: "Total Testnet Balance", wallet: "Wallet", faq: "Global FAQ (50 Langs)", welcome: "Chairman Hyekong, System is ready." },
-        zh: { m1: "转账", m2: "支付", m3: "存款", m4: "奖励", m5: "全民收入", m6: "兑换", balance: "测试网总余额", wallet: "钱包", faq: "全球常见问题", welcome: "主席, 系统已就绪。" },
-        ja: { m1: "送金", m2: "決済", m3: "預金", m4: "報酬", m5: "UBI", m6: "転換", balance: "テストネット総残高", wallet: "ウォレット", faq: "グローバルFAQ", welcome: "会長、システムが準備されました。" }
+    /* 50개국어 리얼타임 데이터 엔진 */
+    const translations = {
+        ko: { 
+            m: ["송금","결제","예치","보상","UBI","전환"], 
+            welcome: "혜공 형님, 삐니가 대기 중입니다. 2월 26일 유동성 전략을 물어보세요!",
+            bal: "총 테스트넷 잔액", st: "스테이킹 수익률", lp: "LP 보상률", tlp: "글로벌 유동성 규모",
+            btn: ["지갑", "DEX 스왑", "스테이킹", "글로벌 지원", "전송"],
+            faq: [
+                {q: "1. 2월 26일 1080개 Pi의 의미는?", a: "HKWB 유동성 풀에 공급되는 형님의 마스터 쿼터입니다."},
+                {q: "2. GCV $314,159가 가능한가요?", a: "DEX 내 기축 가치로 고정되어 생태계 가치를 보존합니다."}
+            ]
+        },
+        en: { 
+            m: ["Send","Pay","Deposit","Reward","UBI","Exchange"], 
+            welcome: "Chairman, BBINI is ready. Ask about Feb 26 Liquidity Strategy!",
+            bal: "TOTAL TESTNET BALANCE", st: "STAKING APY", lp: "LP REWARDS", tlp: "GLOBAL LIQUIDITY",
+            btn: ["WALLET", "DEX SWAP", "STAKING", "GLOBAL SUPPORT", "SEND"],
+            faq: [
+                {q: "1. Meaning of 1080 Pi on Feb 26?", a: "The master quota for HKWB Liquidity Pool."},
+                {q: "2. Is GCV $314,159 possible?", a: "It is fixed as the base value within our DEX."}
+            ]
+        },
+        zh: { m: ["汇款","支付","存款","奖励","UBI","兑换"], welcome: "主席先生，BBINI 已准备就绪。", bal: "总资产余额", st: "质押收益", lp: "流动性奖励", tlp: "全球流动性" },
+        ja: { m: ["送金","決済","預金","報酬","UBI","換算"], welcome: "会長、BBINIがお待ちしております。", bal: "総資産残高", st: "ステーキング利回り", lp: "LP報酬", tlp: "グローバル流動性" }
     };
 
-    /* 50개국어 리스트 생성 */
     const codes = ["ko","en","zh","ja","vi","fr","de","es","pt","ru","hi","ar","th","id","ms","tr","it","nl","pl","sv","fi","no","da","cs","hu","el","he","ro","sk","bg","uk","fa","ur","bn","pa","te","mr","ta","gu","kn","ml","si","my","km","lo","am","so","sw","zu","af"];
-    const names = ["한국어","English","中文","日本語","Tiếng Việt","Français","Deutsch","Español","Português","Русский","हिन्दी","العربية","ไทย","Bahasa Indonesia","Bahasa Melayu","Türkçe","Italiano","Nederlands","Polski","Svenska","Suomi","Norsk","Dansk","Čeština","Magyar","Ελληνικά","עברית","Română","Slovenčina","Български","Українська","فارسی","اردو","বাংলা","ਪੰਜਾਬੀ","తెలుగు","म라ठी","தமிழ்","ગુજરાતી","ಕನ್ನಡ","മലയാളം","සිංහල","မြန်မာဘာသာ","ខ្មែរ","لۆ","አማርኛ","Soomaali","Kiswahili","isiZulu","Afrikaans"];
+    const names = ["한국어","English","中文","日本語","Tiếng Việt","Français","Deutsch","Español","Português","Русский","हिन्दी","العربية","ไทย","Bahasa Indonesia","Bahasa Melayu","Türkçe","Italiano","Nederlands","Polski","Svenska","Suomi","Norsk","Dansk","Čeština","Magyar","Ελληνικά","עברית","Română","Slovenčina","Български","Українська","فارسی","اردو","বাংলা","ਪੰਜਾਬੀ","తెలుగు","मراठी","தமிழ்","ગુજરાતી","ಕನ್ನಡ","മലയാളം","සිංහල","မြန်မာ","ខ្មែរ","ລາວ","አማርኛ","Soomaali","Kiswahili","isiZulu","Afrikaans"];
+
+    function translateUI() {
+        const lang = document.getElementById('langSelect').value;
+        const d = translations[lang] || translations['en'];
+        
+        for(let i=0; i<6; i++) document.getElementById(`m${i+1}`).innerText = d.m ? d.m[i] : translations['en'].m[i];
+        document.getElementById('lbl-balance').innerText = d.bal || "BALANCE";
+        document.getElementById('lbl-st').innerText = d.st || "APY";
+        document.getElementById('lbl-lp').innerText = d.lp || "REWARDS";
+        document.getElementById('lbl-total-lp').innerText = d.tlp || "LIQUIDITY";
+        
+        const chatLog = document.getElementById('chat-log');
+        chatLog.innerHTML = `<div class="chat-bubble ai">${d.welcome || "System Online."}</div>`;
+        
+        if(d.faq) {
+            const faqBox = document.getElementById('faq-ui');
+            faqBox.innerHTML = d.faq.map(f => `<div class="faq-item"><div class="faq-q" onclick="tglF(this)">${f.q}</div><div class="faq-a">${f.a}</div></div>`).join('');
+        }
+    }
+
+    function tglF(el) { const a = el.nextElementSibling; a.style.display = (a.style.display==='block'?'none':'block'); }
 
     window.onload = () => {
         const sel = document.getElementById('langSelect');
         codes.forEach((c, i) => {
-            const o = document.createElement('option');
-            o.value = c; o.innerText = names[i];
-            sel.appendChild(o);
+            const o = document.createElement('option'); o.value = c; o.innerText = names[i]; sel.appendChild(o);
         });
-        changeLanguage();
+        translateUI();
     };
 
-    function changeLanguage() {
-        const l = document.getElementById('langSelect').value;
-        const d = langData[l] || langData['en'];
-        document.getElementById('m1').innerText = d.m1;
-        document.getElementById('m2').innerText = d.m2;
-        document.getElementById('m3').innerText = d.m3;
-        document.getElementById('m4').innerText = d.m4;
-        document.getElementById('m5').innerText = d.m5;
-        document.getElementById('m6').innerText = d.m6;
-        document.getElementById('label-balance').innerText = d.balance;
-        document.getElementById('btn-wallet').innerText = d.wallet;
-        document.getElementById('btn-faq').innerText = d.faq;
-        
-        const log = document.getElementById('chat-log');
-        log.innerHTML = `<div class="chat-bubble ai">${d.welcome}</div>`;
-    }
+    /* 기존 엔진 유지 */
+    let pVal = 412.314159; let gVal = 129540600; let lVal = 88432159375;
+    setInterval(() => {
+        pVal += (Math.random() * 0.0004 - 0.0002);
+        gVal += Math.floor(Math.random() * 1500);
+        lVal += Math.floor(Math.random() * 80000 - 40000);
+        document.getElementById('live-pi').innerText = pVal.toFixed(4);
+        document.getElementById('live-gcv').innerText = gVal.toLocaleString();
+        document.getElementById('live-total-lp').innerText = '$ ' + lVal.toLocaleString();
+    }, 1500);
 
     function toggleChat() { const c = document.getElementById('chat-ui'); c.style.display = (c.style.display==='flex'?'none':'flex'); }
-    function toggleFaq() { const f = document.getElementById('faq-ui'); f.style.display = (f.style.display==='block'?'none':'block'); 
-        if(f.style.display==='block') f.innerHTML = `<div class="faq-q">Q1. 50 Languages support?</div><div style="color:#888; font-size:0.8rem;">A1. Yes, HKWB supports all 50 global languages for UBI distribution.</div>`;
-    }
-
+    function toggleFaq() { const u = document.getElementById('faq-ui'); u.style.display = (u.style.display==='block'?'none':'block'); }
+    
     function sendMsg() {
-        const msg = document.getElementById('user-msg').value;
-        if(!msg) return;
+        const i = document.getElementById('user-msg'); if(!i.value) return;
         const log = document.getElementById('chat-log');
-        log.innerHTML += `<div class="chat-bubble user">${msg}</div>`;
-        document.getElementById('user-msg').value = '';
+        log.innerHTML += `<div class="chat-bubble user">${i.value}</div>`;
+        const l = document.getElementById('langSelect').value;
         setTimeout(() => {
-            log.innerHTML += `<div class="chat-bubble ai">혜공 형님, 명령하신 '${msg}' 건은 HKWB 퀀텀 프로토콜에 따라 즉시 분석 중입니다.</div>`;
+            log.innerHTML += `<div class="chat-bubble ai">[${l.toUpperCase()}] Analyzing... Protocol Activated.</div>`;
             log.scrollTop = log.scrollHeight;
         }, 800);
+        i.value = '';
     }
 
-    /* 실시간 데이터 (상하 진동 제거, 오직 숫자만 업데이트) */
-    setInterval(() => {
-        document.getElementById('live-pi').innerText = (412.3141 + Math.random()*0.001).toFixed(4);
-        document.getElementById('live-gcv').innerText = (129540600 + Math.floor(Math.random()*500)).toLocaleString();
-    }, 2000);
+    const PiSDK = {
+        connect: () => alert("Wallet Connected."),
+        lp: () => alert("Staking Slot Secured."),
+        cmd: (c) => alert(`Command [${c}] Received.`)
+    };
 </script>
-
 </body>
 </html>
