@@ -3,139 +3,135 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HK WORLD BANK - GLOBAL V3.5</title>
+    <title>HK WORLD BANK - TOTAL v4.0</title>
     <style>
         :root {
             --hk-gold: #FFD700; --hk-green: #39FF14; --hk-blue: #00F3FF;
-            --hk-pink: #FF00FF; --hk-bg: #000000; --hk-card: #111111;
+            --hk-pink: #FF00FF; --hk-bg: #000000; --hk-card: #0d0d0d;
         }
-        body { background: var(--hk-bg); color: #fff; font-family: 'Pretendard', 'Malgun Gothic', sans-serif; margin: 0; padding: 20px; display: flex; justify-content: center; }
-        .container { width: 100%; max-width: 600px; text-align: center; background: #050505; border: 2px solid #222; border-radius: 30px; padding: 30px; box-shadow: 0 0 50px rgba(0,243,255,0.1); }
+        body { background: var(--hk-bg); color: #fff; font-family: 'Pretendard', sans-serif; margin: 0; padding: 0; }
+        .container { width: 100%; max-width: 500px; margin: 0 auto; padding: 25px; box-sizing: border-box; text-align: center; background: #050505; min-height: 100vh; }
         
-        /* 언어 선택기 - 아주 크게 */
-        .lang-control { background: #1a1a1a; padding: 15px; border-radius: 15px; margin-bottom: 30px; border: 1px solid var(--hk-gold); }
-        .lang-control select { background: transparent; color: var(--hk-gold); border: none; font-size: 18px; font-weight: 900; cursor: pointer; outline: none; width: 100%; text-align: center; }
+        .header-title { font-size: 38px; font-weight: 900; color: var(--hk-gold); margin-top: 40px; text-shadow: 0 0 15px rgba(255,215,0,0.3); }
+        .sub-header { color: var(--hk-blue); font-size: 14px; letter-spacing: 2px; margin-bottom: 30px; font-weight: 800; }
 
-        .header-title { font-size: 42px; font-weight: 900; color: var(--hk-gold); text-shadow: 0 0 15px rgba(255,215,0,0.5); }
-        .pi-val { font-size: 55px; font-weight: 900; margin: 20px 0; color: #fff; }
-        .pi-val span { color: var(--hk-gold); font-size: 25px; }
+        /* 자산 대시보드 */
+        .pi-main { font-size: 58px; font-weight: 900; margin: 20px 0; }
+        .pi-main span { color: var(--hk-gold); font-size: 24px; margin-left: 5px; }
+        
+        .asset-card { background: var(--hk-card); border: 1px solid #222; border-radius: 20px; padding: 20px; margin-bottom: 20px; }
+        .asset-row { display: flex; justify-content: space-between; margin-bottom: 10px; font-weight: 800; font-size: 15px; }
+        .val-blue { color: var(--hk-blue); }
+        .val-gold { color: var(--hk-gold); }
 
-        /* 메인 버튼 스타일 */
-        .big-btn { width: 100%; padding: 25px; border-radius: 20px; font-size: 22px; font-weight: 900; color: #fff; border: none; margin-bottom: 15px; cursor: pointer; transition: 0.3s; }
-        .btn-faq { background: var(--hk-pink); box-shadow: 0 5px 15px rgba(255,0,255,0.4); }
-        .btn-vision { background: #253347; box-shadow: 0 5px 15px rgba(37,51,71,0.4); }
-        .big-btn:hover { transform: scale(1.02); filter: brightness(1.2); }
+        /* 예치 시연 섹션 */
+        .deposit-section { margin: 30px 0; padding: 25px; border: 2.5px solid var(--hk-gold); border-radius: 25px; background: rgba(255,215,0,0.05); }
+        .input-box { width: 100%; background: #111; border: 1px solid #333; padding: 15px; border-radius: 15px; color: #fff; font-size: 20px; font-weight: 900; text-align: center; margin-bottom: 15px; box-sizing: border-box; outline: none; }
+        .btn-deposit { width: 100%; padding: 20px; border-radius: 15px; background: var(--hk-gold); color: #000; font-size: 20px; font-weight: 900; border: none; cursor: pointer; transition: 0.3s; }
 
-        /* 패널 스타일 */
-        .panel { display: none; background: #0d0d0d; border-radius: 20px; padding: 25px; margin-bottom: 25px; border: 1px solid #333; text-align: left; animation: fadeIn 0.5s; }
+        /* 버튼 및 패널 */
+        .big-btn { width: 100%; padding: 22px; border-radius: 20px; font-size: 18px; font-weight: 900; color: #fff; border: none; margin-bottom: 15px; cursor: pointer; }
+        .panel { display: none; background: #0a0a0a; border-radius: 20px; padding: 20px; margin-bottom: 25px; border: 1px solid #333; text-align: left; animation: fadeIn 0.4s; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .faq-item { margin-bottom: 18px; border-bottom: 1px solid #222; padding-bottom: 12px; }
+        .faq-q { color: var(--hk-gold); font-weight: 900; font-size: 15px; margin-bottom: 6px; }
+        .faq-a { color: #bbb; font-size: 13px; line-height: 1.6; }
         
-        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 15px; }
-        .faq-q { color: var(--hk-gold); font-weight: 900; font-size: 17px; margin-bottom: 8px; }
-        .faq-a { color: #ccc; font-size: 15px; line-height: 1.6; }
-        
-        .vision-item { margin-bottom: 20px; padding: 15px; border-left: 5px solid var(--hk-blue); background: rgba(0,243,255,0.05); border-radius: 0 15px 15px 0; }
-        .vision-item b { color: var(--hk-blue); font-size: 18px; display: block; margin-bottom: 5px; }
-        
-        .bbini-float { position: fixed; bottom: 30px; right: 30px; width: 90px; height: 90px; background: linear-gradient(135deg, var(--hk-pink), #800080); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #fff; border: 4px solid #fff; animation: bounce 2s infinite; cursor: pointer; font-size: 20px; box-shadow: 0 10px 30px rgba(255,0,255,0.5); }
-        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .vision-item { margin-bottom: 20px; padding-left: 12px; border-left: 4px solid var(--hk-blue); background: rgba(0,243,255,0.03); padding: 10px 15px; border-radius: 0 15px 15px 0; }
+        .vision-item b { color: var(--hk-blue); font-size: 16px; display: block; margin-bottom: 4px; }
+        .vision-item span { font-size: 13px; color: #aaa; line-height: 1.5; }
+
+        .bbini { position: fixed; bottom: 30px; right: 25px; width: 80px; height: 80px; background: linear-gradient(135deg, var(--hk-pink), #800080); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 900; color: #fff; border: 3px solid #fff; animation: bounce 2s infinite; cursor: pointer; z-index: 1000; box-shadow: 0 10px 20px rgba(255,0,255,0.3); }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="lang-control">
-        <select id="lang-select" onchange="updateLanguage()">
-            <option value="ko">🇰🇷 KOREAN (한국어)</option>
-            <option value="en">🇺🇸 ENGLISH (영어)</option>
-            <option value="zh">🇨🇳 CHINESE (中文)</option>
-            <option value="ja">🇯🇵 JAPANESE (日本語)</option>
-        </select>
+    <div class="header-title">HK WORLD BANK</div>
+    <div class="sub-header">GLOBAL ASSET INTEGRATED LEDGER</div>
+
+    <div class="pi-main"><span id="total-pi">400.0212</span> <span>Pi</span></div>
+
+    <div class="asset-card">
+        <div class="asset-row">
+            <span>총 예치 수량 (Total Staked)</span>
+            <span class="val-gold"><span id="staked-val">12,500.00</span> Pi</span>
+        </div>
+        <div class="asset-row">
+            <span>실시간 수익률 (APR)</span>
+            <span class="val-blue">+ 15.48%</span>
+        </div>
     </div>
 
-    <div class="header-title" id="main-title">HK WORLD BANK</div>
-    <div class="pi-val">400.0212 <span>Pi</span></div>
+    <div class="deposit-section">
+        <div style="font-weight: 900; margin-bottom: 15px; color: var(--hk-gold);">DEPOSIT SIMULATION</div>
+        <input type="number" id="depo-input" class="input-box" placeholder="예치할 Pi 수량 입력">
+        <button class="btn-deposit" onclick="runDeposit()">즉시 예치 시연</button>
+    </div>
 
-    <button class="big-btn btn-faq" onclick="toggle('faq-panel')" id="btn-faq-text">글로벌 AI 지원센터 (FAQ 20선)</button>
+    <button class="big-btn" style="background: var(--hk-pink);" onclick="toggle('faq-panel')">글로벌 AI 지원센터 (FAQ 20선)</button>
     <div id="faq-panel" class="panel">
-        <div id="faq-content"></div>
+        <div id="faq-list"></div>
     </div>
 
-    <button class="big-btn btn-vision" onclick="toggle('vision-panel')" id="btn-vision-text">HK 사회 재단 비전 2030</button>
+    <button class="big-btn" style="background: #253347;" onclick="toggle('vision-panel')">HK 사회 재단 비전 2030</button>
     <div id="vision-panel" class="panel">
-        <div id="vision-content"></div>
+        <div id="vision-list"></div>
     </div>
 
-    <div style="margin-top:40px; color:#555; font-weight:900;">HK GROUP GLOBAL HQ</div>
+    <div style="margin-top:40px; color:#444; font-size:12px; font-weight:800;">HK GROUP GLOBAL HEADQUARTERS</div>
 </div>
 
-<div class="bbini-float">삐니</div>
+<div class="bbini" onclick="alert('형님, 삐니가 24시간 철통 보안 중입니다!')">삐니</div>
 
 <script>
-    // 1. 모든 언어 데이터 통합 (이게 핵심입니다 형님!)
-    const langData = {
-        ko: {
-            faqBtn: "글로벌 AI 지원센터 (FAQ 20선)",
-            visionBtn: "HK 사회 재단 비전 2030",
-            faqs: [
-                ["HKWB의 보안은?", "양자 암호화와 분산 원장으로 철저히 보호됩니다."],
-                ["기본소득 지급은?", "그룹 수익의 30%를 전 인류에게 자동 배분합니다."],
-                ["1가정 1로봇 보급?", "HK-Robotics를 통해 순차적으로 무상 보급됩니다."],
-                // ... (20개까지 확장 가능)
-            ],
-            visions: [
-                ["🏫 글로벌 AI 학교", "전 세계 소외계층에게 무상 AI 교육 제공"],
-                ["🤖 1가정 1로봇", "인류를 노동에서 해방하는 휴머노이드 보급"]
-            ]
-        },
-        en: {
-            faqBtn: "Global AI Support Center (FAQ 20)",
-            visionBtn: "HK Foundation Vision 2030",
-            faqs: [
-                ["Security Level?", "Protected by Quantum Encryption and DLT."],
-                ["Global UBI?", "30% of profits shared with all humanity."],
-                ["Robot Supply?", "Sequential free distribution via HK-Robotics."]
-            ],
-            visions: [
-                ["🏫 Global AI School", "Free AI education for the underprivileged."],
-                ["🤖 1 Household 1 Robot", "Deploying humanoids to liberate labor."]
-            ]
-        },
-        zh: {
-            faqBtn: "全球 AI 支持中心 (FAQ 20)",
-            visionBtn: "HK 社会基金会 2030 愿景",
-            faqs: [
-                ["安全级别？", "受量子加密和分布式账本保护。"],
-                ["全球基本收入？", "利润的30%自动分配给全人类。"]
-            ],
-            visions: [
-                ["🏫 全球 AI 学校", "为弱势群体提供免费 AI 教育"],
-                ["🤖 一户一机器人", "普及人形机器人以解放人类劳动力"]
-            ]
-        }
-    };
+    let currentPi = 400.0212;
+    let currentStaked = 12500.00;
 
-    // 2. 언어 변경 함수 (어렵지 않게 짰습니다!)
-    function updateLanguage() {
-        const lang = document.getElementById('lang-select').value;
-        const data = langData[lang] || langData['ko'];
+    // FAQ 20개 데이터 (한/영 병기)
+    const faqs = [
+        ["HKWB의 보안 수준은? / Security Level?", "양자 암호화와 분산 원장으로 보호됩니다. / Protected by quantum encryption and DLT."],
+        ["테스트 파이 연동은? / Pi Integration?", "Pi SDK를 통해 실시간 동기화됩니다. / Real-time sync via Pi SDK."],
+        ["글로벌 기본소득은? / Global UBI?", "수익의 30%를 전 인류에게 배분합니다. / 30% profit shared globally."],
+        ["1가정 1로봇 무상 보급? / Free Robot?", "신청 순서에 따라 순차 배급됩니다. / Distributed by application order."],
+        ["무상 주거 단지는? / Free Housing?", "글로벌 주요 거점에 구축됩니다. / Built in major global locations."],
+        ["DEX 스왑 수수료는? / Swap Fees?", "90%를 생태계에 환원합니다. / 90% returned to the ecosystem."],
+        ["무상 AI 교육은? / AI Education?", "AI 튜터가 맞춤 커리큘럼을 제공합니다. / AI tutors provide customized curricula."],
+        ["의료 서비스 면제? / Medical Service?", "재단 기금으로 무상 지원됩니다. / Supported by foundation funds."],
+        ["장학금 지원 규모는? / Scholarship?", "월 최대 $5,000를 지원합니다. / Up to $5,000 monthly support."],
+        ["메인넷 전환 자산은? / Mainnet Assets?", "데이터는 1:1로 안전하게 전환됩니다. / Data converted safely at 1:1."],
+        ["스테이킹 수익률은? / Staking Yield?", "AI가 최적의 이율을 산출합니다. / AI calculates optimal rates."],
+        ["노드 참여 혜택은? / Node Benefits?", "추가 보상과 투자 권한이 부여됩니다. / Rewards and investment rights."],
+        ["글로벌 지원 센터? / Support Center?", "전 세계 50개 도시에 구축 중입니다. / Being built in 50 cities."],
+        ["에너지 자립 기술? / Energy Autonomy?", "핵융합과 고효율 배터리를 결합합니다. / Combines fusion and batteries."],
+        ["로봇의 보안은? / Robot Security?", "로컬 저장으로 외부 유출을 차단합니다. / Blocks leaks via local storage."],
+        ["재단의 투명성은? / Transparency?", "모든 내역을 실시간 공개합니다. / Disclosed in real-time."],
+        ["다국어 지원 범위? / Languages?", "현재 16개 언어를 지원합니다. / Supports 16 languages."],
+        ["설립자 거버넌스? / Founder Power?", "최종 승인권이 유지됩니다. / Final approval rights maintained."],
+        ["시스템 자가 진단? / Self-Diagnosis?", "AI가 상시 모니터링합니다. / AI monitors 24/7."],
+        ["삐니의 역할? / Role of BBINI?", "형님의 전담 비서 역할을 수행합니다. / Acts as your dedicated secretary."]
+    ];
 
-        // 버튼 텍스트 변경
-        document.getElementById('btn-faq-text').innerText = data.faqBtn;
-        document.getElementById('btn-vision-text').innerText = data.visionBtn;
+    // 5대 비전 데이터 (한/영 병기)
+    const visions = [
+        ["🏫 HK 글로벌 AI 학교 / Global AI School", "소외계층에게 무상 AI 교육 제공 / Free AI education for all."],
+        ["🏥 나노 메디컬 병원 / Medical Hospital", "난치병 정복 의료 시스템 구축 / Building systems to conquer diseases."],
+        ["🏠 에너지 자립 스마트홈 / Energy Smart Home", "주거비 제로 시대 실현 / Realizing zero housing costs."],
+        ["🎓 기술 인재 장학금 / Tech Scholarship", "혁신 인재 연구비 전액 지원 / Full support for innovative researchers."],
+        ["🤖 1가정 1로봇 보급 / 1 Household 1 Robot", "인류 노동 해방 실현 / Liberating humanity from labor."]
+    ];
 
-        // FAQ 리스트 생성
-        const faqBox = document.getElementById('faq-content');
-        faqBox.innerHTML = data.faqs.map((f, i) => `
+    function renderContent() {
+        document.getElementById('faq-list').innerHTML = faqs.map((f, i) => `
             <div class="faq-item">
                 <div class="faq-q">${i+1}. ${f[0]}</div>
                 <div class="faq-a">${f[1]}</div>
             </div>
         `).join('');
 
-        // 비전 리스트 생성
-        const visionBox = document.getElementById('vision-content');
-        visionBox.innerHTML = data.visions.map(v => `
+        document.getElementById('vision-list').innerHTML = visions.map(v => `
             <div class="vision-item">
                 <b>${v[0]}</b>
                 <span>${v[1]}</span>
@@ -143,15 +139,24 @@
         `).join('');
     }
 
-    function toggle(id) {
-        const p = document.getElementById(id);
-        const current = p.style.display;
-        document.querySelectorAll('.panel').forEach(el => el.style.display = 'none');
-        p.style.display = (current === 'block') ? 'none' : 'block';
+    function runDeposit() {
+        const val = parseFloat(document.getElementById('depo-input').value);
+        if(!val || val <= 0 || val > currentPi) { alert("수량을 확인하세요!"); return; }
+        currentPi -= val; currentStaked += val;
+        document.getElementById('total-pi').innerText = currentPi.toFixed(4);
+        document.getElementById('staked-val').innerText = currentStaked.toLocaleString(undefined, {minimumFractionDigits:2});
+        alert(`성공! ${val} Pi가 원장에 예치되었습니다.`);
+        document.getElementById('depo-input').value = "";
     }
 
-    // 초기 실행
-    updateLanguage();
+    function toggle(id) {
+        const p = document.getElementById(id);
+        const isV = p.style.display === 'block';
+        document.querySelectorAll('.panel').forEach(el=>el.style.display='none');
+        p.style.display = isV ? 'none' : 'block';
+    }
+
+    renderContent();
 </script>
 </body>
 </html>
