@@ -433,6 +433,37 @@ function confirmAuth(funcName) {
             chatBox.scrollTop = chatBox.scrollHeight;
             alert("코어팀 메인넷 연동 신청 데이터가 완벽히 전송되었습니다.");
         }
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body { font-family: 'Pretendard', sans-serif; background: #0a0a0a; color: #fff; padding: 15px; }
+    h3 { color: #555; font-size: 0.85em; margin-bottom: 10px; border-bottom: 1px solid #333; padding-bottom: 5px; }
+    .grid-2x5 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .box { background: #1a1a1a; padding: 15px; border-radius: 12px; border: 1px solid #333; text-align: center; font-size: 0.9em; }
+    .value { display: block; font-weight: bold; color: #00ffcc; margin-top: 5px; font-size: 1.1em; }
+</style>
+</head>
+<body>
+
+    <h3>9대 분산 연동망 (2×5 금융 허브)</h3>
+    <div class="grid-2x5">
+        <div class="box">지갑연결</div>
+        <div class="box">송금</div>
+        <div class="box">LP 스테이킹</div>
+        <div class="box">예치</div>
+        <div class="box">보상</div>
+        <div class="box">기본소득</div>
+        <div class="box">스왑</div>
+        <div class="box">덱스스왑</div>
+        <div class="box">결제</div>
+        <div class="box">PI 수량<span class="value">0.00 PI</span></div>
+    </div>
+
+</body>
+</html>
 
         // 형님 전용 수수료 지갑 언락장치
         function unlockFeeWallet() {
