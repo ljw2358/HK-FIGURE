@@ -1093,17 +1093,6 @@
             ja: { title: "ワールドバンク", status: "リアルタイム同期中", welcome: "ようこそ。HKワールドバンク統合知能型サービスセンターです。", ph: "台帳ステータスについて質問してください..." }
         };
 
-        function switchLanguage(lang) {
-            const data = langPack[lang] || langPack['en'];
-            document.getElementById('nav-title').innerText = data.title;
-            document.getElementById('agi-status').innerText = data.status;
-            document.getElementById('welcome-msg').innerText = data.welcome;
-            document.getElementById('chat-input').placeholder = data.ph;
-            
-            // langData 콘솔 출력 로직 (추후 본문 텍스트 연동 시 사용)
-            console.log(`언어 데이터(${lang})가 성공적으로 로드되었습니다. 데이터:`, langData);
-        }
-
         function handleSendMessage(event) {
             event.preventDefault();
             const input = document.getElementById('chat-input');
