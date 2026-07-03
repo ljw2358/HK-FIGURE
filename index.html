@@ -2178,12 +2178,19 @@
                 alert("이미 메인넷 신청 원장이 코어팀 심사 큐에 대기 중입니다.");
                 return;
             }
+          // 메인넷 신청 로직
+        function requestMainnet() {
+            if(isMainnetApplied) {
+                alert("이미 메인넷 신청 원장이 코어팀 심사 큐에 대기 중입니다.");
+                return;
+            }
             isMainnetApplied = true;
             document.getElementById('mainnet-status').innerHTML = `<i class="fa-solid fa-square-check text-emerald-400 mr-1"></i>코어팀 심사 접수 완료`;
             document.getElementById('mainnet-status').className = "text-xs text-emerald-400 font-bold";
             alert("코어팀 메인넷 연동 신청 데이터가 완벽히 전송되었습니다.");
         }
 
+        // 지갑 잠금 해제 로직
         function unlockFeeWallet() {
             const password = document.getElementById('fee-password-input').value.trim();
             const lockScreen = document.getElementById('fee-lock-screen');
@@ -2201,7 +2208,20 @@
             }
         }
 
-        // 챗봇 및 언어 변환 로직 (langData 연동 추가됨)
+        // 50개국 언어 코드와 번역 데이터 매핑 테이블
+        const langMap = {
+            "ko": "한국어", "en": "English", "ja": "日本語", "zh": "中文", "es": "Español",
+            "fr": "Français", "de": "Deutsch", "ru": "Русский", "ar": "العربية", "pt": "Português",
+            "hi": "हिन्दी", "it": "Italiano", "tr": "Türkçe", "nl": "Nederlands", "vi": "Tiếng Việt",
+            "th": "ไทย", "pl": "Polski", "sv": "Svenska", "da": "Dansk", "no": "Norsk",
+            "fi": "Suomi", "el": "Ελληνικά", "hu": "Magyar", "cs": "Čeština", "ro": "Română",
+            "bg": "Български", "uk": "Українська", "id": "Indonesian", "ms": "Malay", "tl": "Filipino",
+            "fa": "Farsi", "he": "Hebrew", "ur": "Urdu", "bn": "Bengali", "gu": "Gujarati",
+            "mr": "Marathi", "pa": "Punjabi", "ta": "Tamil", "te": "Telugu", "kn": "Kannada",
+            "ml": "Malayalam", "si": "Sinhala", "km": "Khmer", "lo": "Lao", "my": "Burmese",
+            "mn": "Mongolian", "kk": "Kazakh", "uz": "Uzbek", "sw": "Swahili"
+        };
+
         const langPack = {
             ko: { title: "월드뱅크 플랫폼", status: "실시간 초동기화 연산 중", welcome: "반갑습니다. HK 월드뱅크 통합 지능형 서비스 센터입니다.", ph: "원장 상태 및 금융 노드에 대해 질문하십시오..." },
             en: { title: "WorldBank Hub", status: "Inference Loop Synchronized", welcome: "Welcome. HK WorldBank Centralized Intelligent Support Core is online.", ph: "Search network ledger status..." },
@@ -2209,17 +2229,23 @@
             ja: { title: "ワールドバンク", status: "リアルタイム同期中", welcome: "ようこそ。HKワールドバンク統合知能型サービスセンターです。", ph: "台帳ステータスについて質問してください..." }
         };
 
+        // 챗봇 및 언어 변환 로직 (langData 연동)
         function switchLanguage(lang) {
             const data = langPack[lang] || langPack['en'];
             document.getElementById('nav-title').innerText = data.title;
             document.getElementById('agi-status').innerText = data.status;
-            document.getElementById('welcome-msg').innerText = data.welcome;
             document.getElementById('chat-input').placeholder = data.ph;
             
-            // langData 콘솔 출력 로직 (추후 본문 텍스트 연동 시 사용)
-            console.log(`언어 데이터(${lang})가 성공적으로 로드되었습니다. 데이터:`, langData);
+            // 형님이 번역하신 langData를 AGI 채팅창 환영 메시지에 직접 연결
+            const mappedName = langMap[lang]; 
+            if (mappedName && langData[mappedName]) {
+                document.getElementById('welcome-msg').innerText = langData[mappedName].ai_d;
+            } else {
+                document.getElementById('welcome-msg').innerText = data.welcome;
+            }
         }
 
+        // 챗봇 메시지 발송 로직
         function handleSendMessage(event) {
             event.preventDefault();
             const input = document.getElementById('chat-input');
@@ -2243,8 +2269,4 @@
         }
     </script>
 </body>
-</html>
-
-    </script>
-</body>
-</html>
+</html> 
