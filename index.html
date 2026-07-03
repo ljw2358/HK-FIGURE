@@ -1329,7 +1329,8 @@ function confirmAuth(funcName) {
             // 타 대륙별 48개국 언어 스위치셋 데이터 구조 역시 동일 규격으로 자바스크립트 엔진 메모리에 풀 마운트 완료되어 바인딩 처리됨.
         };
 
-        function switchLanguage(lang) {
+      
+function switchLanguage(lang) {
             const data = langPack[lang] || langPack['en'];
             document.getElementById('nav-title').innerText = data.title;
             document.getElementById('agi-status').innerText = data.status;
@@ -1337,9 +1338,26 @@ function confirmAuth(funcName) {
             document.getElementById('chat-input').placeholder = data.ph;
         }
 
-        이상 노드 감지 시 0.1초 내 즉각 우회 인프라를 가동합니다." }
+        const faqs = [
+            { 
+                q: "시스템 보안 정책", 
+                a: "이상 노드 감지 시 0.1초 내 즉각 우회 인프라를 가동합니다." 
+            },
+            {
+                q: "자산 동기화",
+                a: "실시간 분산 원장 기술을 통해 초동기화 상태를 유지합니다."
+            }
         ];
 
+        const faqContainer = document.getElementById('faq-container');
+        faqs.forEach(faq => {
+            faqContainer.insertAdjacentHTML('beforeend', `
+                <details class="group bg-slate-800 p-4 rounded-xl border border-slate-700/50 cursor-pointer transition-all hover:bg-slate-800/80">
+                    <summary class="font-semibold text-slate-200 flex justify-between items-center outline-none select-none">
+                        <span>${faq.q}</span><i class="fa-solid fa-chevron-down text-xs transition group-open:rotate-180 text-amber-500"></i>
+                    </summary>
+                    <p class="mt-3 text-slate-400 leading-relaxed border-t border-slate-700/50 pt-3 text-xs sm:text-sm">${faq.a}</p>
+                </details>
         const faqContainer = document.getElementById('faq-container');
         faqs.forEach(faq => {
             faqContainer.insertAdjacentHTML('beforeend', `
