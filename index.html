@@ -14,17 +14,67 @@
 </head>
 <body class="min-h-screen flex flex-col">
 
-    <!-- 상단 네비게이션 -->
-    <header class="glass sticky top-0 z-50 px-6 py-4 flex items-center justify-between border-b border-blue-900/50">
-     <!-- 상단 헤더 영역 -->
+  <!-- 상단 헤더: 중복을 없애고 정중앙 정렬만 완벽히 고정 -->
 <header class="glass sticky top-0 z-50 px-4 py-4 relative flex items-center justify-between border-b border-blue-500/20">
-    <!-- 왼쪽 빈 공간 확보용 -->
-    <div class="flex items-center space-x-3 w-32"></div>
+    <!-- 왼쪽 여백용 박스 -->
+    <div class="w-24"></div>
 
-    <!-- 정중앙으로 이동한 타이틀 -->
-    <div class="absolute left-1/2 transform -translate-x-1/2 flex items-center space-x-2">
+    <!-- 정중앙에 위치할 HK WORLDBANK 타이틀 -->
+    <div class="absolute left-1/2 transform -translate-x-1/2 text-center">
         <span class="text-lg font-bold tracking-wider text-white">HK WORLDBANK</span>
     </div>
+
+    <!-- 우측 언어 선택 컨트롤 -->
+    <div class="flex items-center space-x-2">
+        <select id="lang-switcher" class="bg-gray-900 border border-blue-500 text-blue-300 text-xs rounded-lg px-3 py-2">
+            <option value="ko">🇰🇷 한국어</option>
+            <option value="en">🇺🇸 English</option>
+            <option value="zh">🇨🇳 中文</option>
+            <option value="ja">🇯🇵 日本語</option>
+            <option value="vi">🇻🇳 Tiếng Việt</option>
+            <option value="th">🇹🇭 ภาษาไทย</option>
+            <option value="id">🇮🇩 Bahasa Indonesia</option>
+            <option value="hi">🇮🇳 हिंदी</option>
+            <option value="bn">🇧🇩 বাংলা</option>
+            <option value="fil">🇵🇭 Tagalog</option>
+            <option value="ms">🇲🇾 Melayu</option>
+            <option value="my">🇲🇲 မြန်မာဘာသာ</option>
+            <option value="km">🇰🇭 ភាសាខ្មែរ</option>
+            <option value="lo">🇱🇦 ລາວ</option>
+            <option value="mn">🇲🇳 Монгол</option>
+            <option value="es">🇪🇸 Español</option>
+            <option value="fr">🇫🇷 Français</option>
+            <option value="de">🇩🇪 Deutsch</option>
+            <option value="ru">🇷🇺 Русский</option>
+            <option value="pt">🇵🇹 Português</option>
+            <option value="it">🇮🇹 Italiano</option>
+            <option value="uk">🇺🇦 Українська</option>
+            <option value="pl">🇵🇱 Polski</option>
+            <option value="nl">🇳🇱 Nederlands</option>
+            <option value="tr">🇹🇷 Türkçe</option>
+            <option value="ro">🇷🇴 Română</option>
+            <option value="el">🇬🇷 Ελληνικά</option>
+            <option value="cs">🇨🇿 Čeština</option>
+            <option value="sv">🇸🇻 Svenska</option>
+            <option value="hu">🇭🇺 Magyar</option>
+            <option value="fi">🇫🇮 Suomi</option>
+            <option value="da">🇩🇰 Dansk</option>
+            <option value="no">🇳🇴 Norsk</option>
+            <option value="sk">🇸🇰 Slovenčina</option>
+            <option value="hr">🇭🇷 Hrvatski</option>
+            <option value="ar">🇸🇦 العربية</option>
+            <option value="fa">🇮🇷 فارسی</option>
+            <option value="he">🇮🇱 עברית</option>
+            <option value="tr_tr">🇦🇿 Azərbaycanca</option>
+            <option value="sw">🇹🇿 Kiswahili</option>
+            <option value="am">🇪🇹 አማርኛ</option>
+            <option value="ha">🇳🇬 Hausa</option>
+            <option value="yo">🇳🇬 Yorùbá</option>
+            <option value="zu">🇿🇦 IsiZulu</option>
+            <option value="af">🇿🇦 Afrikaans</option>
+        </select>
+    </div>
+</header>
 
     <!-- 우측 언어 선택 영역 -->
     <div class="flex items-center space-x-3">
