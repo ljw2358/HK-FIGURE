@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>HK BANK & WORLD BANK | 글로벌 슈퍼 뱅킹 플랫폼</title>
+    <title>HK WORLD BANK | 글로벌 슈퍼 뱅킹 플랫폼</title>
     <!-- FontAwesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800;900&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -55,9 +55,9 @@
             padding-bottom: 90px;
         }
 
-        /* 🌟 상단 웅장한 HK BANK & WORLD BANK 헤더 */
+        /* 🌟 상단 웅장한 HK WORLD BANK 헤더 */
         header {
-            padding: 16px 20px;
+            padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -69,7 +69,7 @@
         }
 
         .bank-logo {
-            font-size: 22px;
+            font-size: 20px;
             font-weight: 900;
             color: var(--text-main);
             display: flex;
@@ -83,49 +83,20 @@
             color: #fff;
             padding: 4px 8px;
             border-radius: 8px;
-            font-size: 16px;
+            font-size: 15px;
             font-weight: 900;
         }
 
         .header-icons {
             display: flex;
-            gap: 16px;
-            font-size: 20px;
+            gap: 18px;
+            font-size: 22px;
             color: var(--text-main);
             cursor: pointer;
             align-items: center;
         }
 
-        /* 🌍 60개국어 다국어 선택 엔진 상단 바 */
-        .lang-bar {
-            padding: 10px 20px;
-            background: #f8f9fa;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .lang-info {
-            font-size: 11px;
-            color: var(--text-muted);
-            font-weight: 700;
-        }
-
-        .top-lang-select {
-            background: #ffffff;
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 6px 10px;
-            border-radius: 8px;
-            font-size: 12px;
-            outline: none;
-            cursor: pointer;
-            font-weight: 600;
-            max-width: 220px;
-        }
-
-        /* 메인 콘텐츠 영역 */
+        /* 메인 화면 */
         main {
             padding: 20px;
             flex: 1;
@@ -324,53 +295,6 @@
         .history-amount.plus { color: var(--success); }
         .history-amount.minus { color: var(--text-main); }
 
-        /* 맨 아래 푸터 영역 (유튜브 & 틱톡) */
-        .footer-media-section {
-            margin-top: 24px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-        }
-
-        .footer-media-title {
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--text-muted);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        .footer-media-buttons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .footer-media-btn {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            padding: 12px;
-            border-radius: 12px;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        .footer-media-btn.youtube {
-            background: rgba(255, 0, 0, 0.08);
-            color: #ff0000;
-            border: 1px solid rgba(255, 0, 0, 0.2);
-        }
-
-        .footer-media-btn.tiktok {
-            background: rgba(254, 44, 85, 0.08);
-            color: #fe2c55;
-            border: 1px solid rgba(254, 44, 85, 0.2);
-        }
-
         /* 하단 네비게이션 바 */
         .bottom-nav {
             position: fixed;
@@ -406,7 +330,7 @@
             font-size: 18px;
         }
 
-        /* 삼선 햄버거 메뉴 서랍 (Drawer) */
+        /* 🌟 삼선 햄버거 메뉴 서랍 (Drawer) */
         .drawer-overlay {
             position: fixed;
             top: 0;
@@ -466,6 +390,20 @@
             color: var(--text-muted);
             text-transform: uppercase;
             font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .drawer-lang-select {
+            width: 100%;
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            border-radius: 10px;
+            font-size: 13px;
+            outline: none;
+            cursor: pointer;
+            font-weight: 600;
             margin-bottom: 10px;
         }
 
@@ -558,85 +496,16 @@
 
     <div class="app-container">
 
-        <!-- 🌟 상단 웅장한 HK BANK & WORLD BANK 타이틀 헤더 -->
+        <!-- 🌟 상단 웅장한 HK WORLD BANK 헤더 -->
         <header>
             <div class="bank-logo">
-                <span class="hk">HK</span> BANK & WORLD
+                <span class="hk">HK</span> WORLD BANK
             </div>
             <div class="header-icons">
                 <i class="fa-regular fa-bell" onclick="alert('새로운 알림이 없습니다.')"></i>
                 <i class="fa-solid fa-bars" onclick="toggleDrawer()" style="cursor:pointer;"></i>
             </div>
         </header>
-
-        <!-- 🌍 60개국어 다국어 선택 엔진 드롭다운 바 -->
-        <div class="lang-bar">
-            <span class="lang-info">🌍 60-Language Engine</span>
-            <select class="top-lang-select" id="langSelect" onchange="changeGlobalLanguage(this.value)">
-                <option value="ko" selected>🇰🇷 한국어 (Korean)</option>
-                <option value="en">🇺🇸 English (영어)</option>
-                <option value="zh">🇨🇳 中文 (중국어)</option>
-                <option value="ja">🇯🇵 日本語 (일본어)</option>
-                <option value="ru">🇷🇺 Русский (러시아어)</option>
-                <option value="vi">🇻🇳 Tiếng Việt (베트남어)</option>
-                <option value="th">🇹🇭 ไทย (태국어)</option>
-                <option value="id">🇮🇩 Bahasa Indonesia (인도네시아어)</option>
-                <option value="ps">🇵🇸 العربية (팔레스타인/아랍어)</option>
-                <option value="de">🇩🇪 Deutsch (독일어)</option>
-                <option value="it">🇮🇹 Italiano (이탈리아어)</option>
-                <option value="fr">🇫🇷 Français (프랑스어)</option>
-                <option value="es">🇪🇸 Español (스페인어)</option>
-                <option value="pt">🇵🇹 Português (포르투갈어)</option>
-                <option value="tr">🇹🇷 Türkçe (터키어)</option>
-                <option value="nl">🇳🇱 Nederlands (네덜란드어)</option>
-                <option value="pl">🇵🇱 Polski (폴란드어)</option>
-                <option value="uk">🇺🇦 Українська (우크라이나어)</option>
-                <option value="sv">🇸🇪 Svenska (스웨덴어)</option>
-                <option value="no">🇳🇴 Norsk (노르웨이어)</option>
-                <option value="fi">🇫🇮 Suomi (핀란드어)</option>
-                <option value="da">🇩🇰 Dansk (덴마크어)</option>
-                <option value="cs">🇨🇿 Čeština (체코어)</option>
-                <option value="hu">🇭🇺 Magyar (헝가리어)</option>
-                <option value="ro">🇷🇴 Română (루마니아어)</option>
-                <option value="el">🇬🇷 Ελληνικά (그리스어)</option>
-                <option value="hi">🇮🇳 हिन्दी (힌디어)</option>
-                <option value="bn">🇧🇩 বাংলা (벵골어)</option>
-                <option value="ms">🇲🇾 Bahasa Melayu (말레이어)</option>
-                <option value="fil">🇵🇭 Tagalog (필리핀어)</option>
-                <option value="my">🇲🇲 မြန်မာဘာသာ (미얀마어)</option>
-                <option value="km">🇰🇭 ភាសាខ្មែរ (크메르어)</option>
-                <option value="lo">🇱🇦 ພາສາລາວ (라오어)</option>
-                <option value="ur">🇵🇰 اردو (우르두어)</option>
-                <option value="fa">🇮🇷 فارسی (페르시아어)</option>
-                <option value="he">🇮🇱 עברית (히브리어)</option>
-                <option value="sw">🇰🇪 Kiswahili (스왈리어)</option>
-                <option value="ha">🇳🇬 Hausa (하우사어)</option>
-                <option value="yo">🇳🇬 Yorùbá (요루바어)</option>
-                <option value="ig">🇳🇬 Asụsụ Igbo (이그보어)</option>
-                <option value="am">🇪🇹 አማርኛ (암하라어)</option>
-                <option value="zu">🇿🇦 isiZulu (줄루어)</option>
-                <option value="xh">🇿🇦 isiXhosa (코사어)</option>
-                <option value="af">🇿🇦 Afrikaans (아프리칸스어)</option>
-                <option value="mg">🇲🇬 Malagasy (마다가스카르어)</option>
-                <option value="sn">🇿🇼 chiShona (쇼나어)</option>
-                <option value="st">🇱🇸 Sesotho (세소토어)</option>
-                <option value="tn">🇧🇼 Setswana (츠와나어)</option>
-                <option value="ny">🇲🇼 Chichewa (체와어)</option>
-                <option value="rw">🇷🇼 Kinyarwanda (키냐르완다어)</option>
-                <option value="so">🇸🇴 Soomaali (소말리아어)</option>
-                <option value="ln">🇨🇩 Lingala (링갈리어)</option>
-                <option value="wo">🇸🇳 Wolof (월로프어)</option>
-                <option value="ff">🇬🇳 Fulfulde (풀라어)</option>
-                <option value="ti">🇪🇷 ትግርኛ (티그리냐어)</option>
-                <option value="om">🇪🇹 Afaan Oromoo (오로모어)</option>
-                <option value="ka">🇬🇪 ქართული (조지아어)</option>
-                <option value="hy">🇦🇲 Հայերեն (아르메니아어)</option>
-                <option value="az">🇦🇿 Azərbaycanca (아제르바이잔어)</option>
-                <option value="kk">🇰🇿 Қазақ тілі (카자흐어)</option>
-                <option value="uz">🇺🇿 Oʻzbekcha (우즈베크어)</option>
-                <option value="mn">🇲🇳 Монгол (몽골어)</option>
-            </select>
-        </div>
 
         <!-- 메인 화면 -->
         <main>
@@ -720,19 +589,6 @@
                     </div>
                 </div>
             </div>
-
-            <!-- 맨 아래 푸터 영역 (유튜브 & 틱톡) -->
-            <div class="footer-media-section">
-                <div class="footer-media-title">Official Media Channels</div>
-                <div class="footer-media-buttons">
-                    <a href="https://www.youtube.com/@Hyekong2026" target="_blank" class="footer-media-btn youtube">
-                        <i class="fa-brands fa-youtube"></i> YouTube
-                    </a>
-                    <a href="https://www.tiktok.com/@hyekong2026" target="_blank" class="footer-media-btn tiktok">
-                        <i class="fa-brands fa-tiktok"></i> TikTok
-                    </a>
-                </div>
-            </div>
         </main>
 
         <!-- 하단 네비게이션 탭 -->
@@ -744,25 +600,102 @@
         </nav>
     </div>
 
-    <!-- 삼선 햄버거 메뉴 서랍 (Drawer) -->
+    <!-- 🌟 삼선 햄버거 메뉴 서랍 (60개국어 + 공식 미디어 + 9대 미래 혁신 생태계 허브) -->
     <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawerOutside(event)">
         <div class="drawer-content">
             <div class="drawer-header">
-                <span class="drawer-title">HK NAVIGATOR</span>
+                <span class="drawer-title">HK WORLD NAVIGATOR</span>
                 <button onclick="toggleDrawer()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
             </div>
 
+            <!-- 🌐 60개국어 다국어 선택 엔진 -->
+            <div class="menu-group">
+                <div class="menu-group-title">🌍 60-Language Engine</div>
+                <select class="drawer-lang-select" id="langSelect" onchange="changeGlobalLanguage(this.value)">
+                    <option value="ko" selected>🇰🇷 한국어 (Korean)</option>
+                    <option value="en">🇺🇸 English (영어)</option>
+                    <option value="zh">🇨🇳 中文 (중국어)</option>
+                    <option value="ja">🇯🇵 日本語 (일본어)</option>
+                    <option value="ru">🇷🇺 Русский (러시아어)</option>
+                    <option value="vi">🇻🇳 Tiếng Việt (베트남어)</option>
+                    <option value="th">🇹🇭 ไทย (태국어)</option>
+                    <option value="id">🇮🇩 Bahasa Indonesia (인도네시아어)</option>
+                    <option value="ps">🇵🇸 العربية (팔레스타인/아랍어)</option>
+                    <option value="de">🇩🇪 Deutsch (독일어)</option>
+                    <option value="it">🇮🇹 Italiano (이탈리아어)</option>
+                    <option value="fr">🇫🇷 Français (프랑스어)</option>
+                    <option value="es">🇪🇸 Español (스페인어)</option>
+                    <option value="pt">🇵🇹 Português (포르투갈어)</option>
+                    <option value="tr">🇹🇷 Türkçe (터키어)</option>
+                    <option value="nl">🇳🇱 Nederlands (네덜란드어)</option>
+                    <option value="pl">🇵🇱 Polski (폴란드어)</option>
+                    <option value="uk">🇺🇦 Українська (우크라이나어)</option>
+                    <option value="sv">🇸🇪 Svenska (스웨덴어)</option>
+                    <option value="no">🇳🇴 Norsk (노르웨이어)</option>
+                    <option value="fi">🇫🇮 Suomi (핀란드어)</option>
+                    <option value="da">🇩🇰 Dansk (덴마크어)</option>
+                    <option value="cs">🇨🇿 Čeština (체코어)</option>
+                    <option value="hu">🇭🇺 Magyar (헝가리어)</option>
+                    <option value="ro">🇷🇴 Română (루마니아어)</option>
+                    <option value="el">🇬🇷 Ελληνικά (그리스어)</option>
+                    <option value="hi">🇮🇳 हिन्दी (힌디어)</option>
+                    <option value="bn">🇧🇩 বাংলা (벵골어)</option>
+                    <option value="ms">🇲🇾 Bahasa Melayu (말레이어)</option>
+                    <option value="fil">🇵🇭 Tagalog (필리핀어)</option>
+                    <option value="my">🇲🇲 မြန်မာဘာသာ (미얀마어)</option>
+                    <option value="km">🇰🇭 ភាសាខ្មែរ (크메르어)</option>
+                    <option value="lo">🇱🇦 ພາສາລາວ (라오어)</option>
+                    <option value="ur">🇵🇰 اردو (우르두어)</option>
+                    <option value="fa">🇮🇷 فارسی (페르시아어)</option>
+                    <option value="he">🇮🇱 עברית (히브리어)</option>
+                    <option value="sw">🇰🇪 Kiswahili (스왈리어)</option>
+                    <option value="ha">🇳🇬 Hausa (하우사어)</option>
+                    <option value="yo">🇳🇬 Yorùbá (요루바어)</option>
+                    <option value="ig">🇳🇬 Asụsụ Igbo (이그보어)</option>
+                    <option value="am">🇪🇹 አማርኛ (암하라어)</option>
+                    <option value="zu">🇿🇦 isiZulu (줄루어)</option>
+                    <option value="xh">🇿🇦 isiXhosa (코사어)</option>
+                    <option value="af">🇿🇦 Afrikaans (아프리칸스어)</option>
+                    <option value="mg">🇲🇬 Malagasy (마다가스카르어)</option>
+                    <option value="sn">🇿🇼 chiShona (쇼나어)</option>
+                    <option value="st">🇱🇸 Sesotho (세소토어)</option>
+                    <option value="tn">🇧🇼 Setswana (츠와나어)</option>
+                    <option value="ny">🇲🇼 Chichewa (체와어)</option>
+                    <option value="rw">🇷🇼 Kinyarwanda (키냐르완다어)</option>
+                    <option value="so">🇸🇴 Soomaali (소말리아어)</option>
+                    <option value="ln">🇨🇩 Lingala (링갈리어)</option>
+                    <option value="wo">🇸🇳 Wolof (월로프어)</option>
+                    <option value="ff">🇬🇳 Fulfulde (풀라어)</option>
+                    <option value="ti">🇪🇷 ትግርኛ (티그리냐어)</option>
+                    <option value="om">🇪🇹 Afaan Oromoo (오로모어)</option>
+                    <option value="ka">🇬🇪 ქართული (조지아어)</option>
+                    <option value="hy">🇦🇲 Հայերեն (아르메니아어)</option>
+                    <option value="az">🇦🇿 Azərbaycanca (아제르바이잔어)</option>
+                    <option value="kk">🇰🇿 Қазақ тілі (카자흐어)</option>
+                    <option value="uz">🇺🇿 Oʻzbekcha (우즈베크어)</option>
+                    <option value="mn">🇲🇳 Монгол (몽гол어)</option>
+                </select>
+            </div>
+
+            <!-- 공식 미디어 허브 -->
             <div class="menu-group">
                 <div class="menu-group-title">Official Media Hubs</div>
                 <a class="menu-item" href="https://www.youtube.com/@Hyekong2026" target="_blank"><i class="fa-brands fa-youtube" style="color:#ff0000;"></i> YouTube (@Hyekong2026)</a>
                 <a class="menu-item" href="https://www.tiktok.com/@hyekong2026" target="_blank"><i class="fa-brands fa-tiktok" style="color:#fe2c55;"></i> TikTok (@hyekong2026)</a>
             </div>
 
+            <!-- 🌟 9대 미래 혁신 생태계 허브 -->
             <div class="menu-group">
-                <div class="menu-group-title">HK Global Ecosystem Hubs</div>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-ROBOT" target="_blank"><i class="fa-solid fa-robot"></i> 로봇: HK-ROBOT</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-NEXUS" target="_blank"><i class="fa-solid fa-glasses"></i> 스마트 글래스: HK-NEXUS</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-UAM" target="_blank"><i class="fa-solid fa-helicopter"></i> 도심항공교통: HK-UAM</a>
+                <div class="menu-group-title">HK 9 Major Future Ecosystems</div>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-WORLDBANK" target="_blank"><i class="fa-solid fa-building-columns" style="color:#0064ff;"></i> 1. 웹3 디지털 뱅킹 (HK WorldBank)</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-ROBOT" target="_blank"><i class="fa-solid fa-robot" style="color:#00c853;"></i> 2. 휴머노이드 로봇 (HK-ROBOT)</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-NEXUS" target="_blank"><i class="fa-solid fa-glasses" style="color:#9c27b0;"></i> 3. AI 스마트 글래스 (HK-NEXUS)</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-UAM" target="_blank"><i class="fa-solid fa-helicopter" style="color:#ff9800;"></i> 4. 도심항공교통 (HK-UAM)</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-QUANTUM" target="_blank"><i class="fa-solid fa-dna" style="color:#00bcd4;"></i> 5. 퀀텀 바이오 (HK-QUANTUM)</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-SPACE" target="_blank"><i class="fa-solid fa-rocket" style="color:#673ab7;"></i> 6. 우주항공 (HK-SPACE)</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-FUSION" target="_blank"><i class="fa-solid fa-sun" style="color:#ff5722;"></i> 7. 인공태양 핵융합 (HK-FUSION)</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-DEFENSE" target="_blank"><i class="fa-solid fa-shield-halved" style="color:#607d8b;"></i> 8. 첨단 방산산업 (HK-DEFENSE)</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-MEGA" target="_blank"><i class="fa-solid fa-city" style="color:#e91e63;"></i> 9. 해오름 특별시 (HK-MEGA CITY)</a>
             </div>
         </div>
     </div>
