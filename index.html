@@ -11,27 +11,25 @@
         :root {
             --bg-body: #f2f4f6;
             --bg-app: #ffffff;
-            --primary-color: #3182ce; /* 토스/카뱅 스타일 모던 블루 */
-            --primary-yellow: #fee500; /* 카뱅/카카오 감성 포인트 */
             --toss-blue: #0064ff;
             --text-main: #191f28;
             --text-muted: #8b95a1;
             --card-bg: #f8f9fa;
             --border-color: #e5e8eb;
-            --danger: #f04452;
             --success: #00c853;
+            --pi-color: #f7931a;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-tap-highlight-color: transparent;
         }
 
         body {
-            background-color: #333;
+            background-color: #222;
             color: var(--text-main);
             display: flex;
             justify-content: center;
@@ -45,11 +43,11 @@
             max-width: 480px;
             background-color: var(--bg-app);
             min-height: 100vh;
-            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.4);
             position: relative;
             display: flex;
             flex-direction: column;
-            padding-bottom: 70px;
+            padding-bottom: 90px;
         }
 
         /* 상단 네비게이션 */
@@ -87,6 +85,7 @@
             font-size: 20px;
             color: var(--text-main);
             cursor: pointer;
+            align-items: center;
         }
 
         /* 메인 스크롤 영역 */
@@ -96,7 +95,6 @@
             overflow-y: auto;
         }
 
-        /* 사용자 웰컴 배너 */
         .welcome-banner {
             margin-bottom: 20px;
             padding: 6px 0;
@@ -114,7 +112,7 @@
             color: var(--text-muted);
         }
 
-        /* 계좌 카드 (카뱅/토스 스타일) */
+        /* 계좌 카드 */
         .account-card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -122,11 +120,6 @@
             padding: 20px;
             margin-bottom: 16px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.02);
-            transition: transform 0.1s ease;
-        }
-
-        .account-card:active {
-            transform: scale(0.98);
         }
 
         .account-top {
@@ -178,7 +171,6 @@
             color: var(--text-main);
             cursor: pointer;
             text-align: center;
-            transition: background 0.2s;
         }
 
         .btn-action.primary {
@@ -187,11 +179,7 @@
             border: none;
         }
 
-        .btn-action:active {
-            opacity: 0.8;
-        }
-
-        /* 빠른 메뉴 (송금, 모으기, 대출, 투자 등) */
+        /* 빠른 메뉴 */
         .quick-menu-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -218,12 +206,6 @@
             font-size: 20px;
             color: var(--toss-blue);
             border: 1px solid var(--border-color);
-            transition: all 0.2s;
-        }
-
-        .quick-menu-item:active .quick-icon {
-            transform: scale(0.9);
-            background: #e8f3ff;
         }
 
         .quick-label {
@@ -233,7 +215,7 @@
             text-align: center;
         }
 
-        /* 소비 및 자산 섹션 */
+        /* 최근 거래 내역 */
         .section-box {
             background: #ffffff;
             border: 1px solid var(--border-color);
@@ -306,7 +288,54 @@
         .history-amount.plus { color: var(--success); }
         .history-amount.minus { color: var(--text-main); }
 
-        /* 하단 네비게이션 바 (토스/카뱅 하단 탭 스타일) */
+        /* 🌟 유튜브 & 틱톡 맨 아래 푸터 영역 */
+        .footer-media-section {
+            margin-top: 20px;
+            padding: 20px 0;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+
+        .footer-media-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .footer-media-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-media-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .footer-media-btn.youtube {
+            background: rgba(255, 0, 0, 0.08);
+            color: #ff0000;
+            border: 1px solid rgba(255, 0, 0, 0.2);
+        }
+
+        .footer-media-btn.tiktok {
+            background: rgba(254, 44, 85, 0.08);
+            color: #fe2c55;
+            border: 1px solid rgba(254, 44, 85, 0.2);
+        }
+
+        /* 하단 네비게이션 바 */
         .bottom-nav {
             position: fixed;
             bottom: 0;
@@ -341,7 +370,90 @@
             font-size: 18px;
         }
 
-        /* 모달 팝업 창 */
+        /* 🌟 삼선 햄버거 메뉴 서랍 (Drawer) */
+        .drawer-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 200;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .drawer-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .drawer-content {
+            position: fixed;
+            top: 0;
+            left: -320px;
+            width: 300px;
+            height: 100vh;
+            background: #ffffff;
+            z-index: 201;
+            transition: left 0.3s cubic-bezier(0.1, 0.9, 0.2, 1);
+            overflow-y: auto;
+            padding: 24px 20px;
+        }
+
+        .drawer-overlay.active .drawer-content {
+            left: 0;
+        }
+
+        .drawer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .drawer-title {
+            font-size: 16px;
+            font-weight: 800;
+            color: var(--toss-blue);
+        }
+
+        .menu-group {
+            margin-bottom: 20px;
+        }
+
+        .menu-group-title {
+            font-size: 11px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 14px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 13px;
+            border-radius: 10px;
+            margin-bottom: 6px;
+            background: var(--card-bg);
+            cursor: pointer;
+        }
+
+        .menu-item i {
+            color: var(--toss-blue);
+            width: 18px;
+            text-align: center;
+        }
+
+        /* 모달 팝업 */
         .modal {
             position: fixed;
             top: 0;
@@ -380,39 +492,6 @@
             transform: translateY(0);
         }
 
-        .sheet-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .sheet-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--text-main);
-        }
-
-        .sheet-close {
-            background: none;
-            border: none;
-            font-size: 20px;
-            color: var(--text-muted);
-            cursor: pointer;
-        }
-
-        .input-group {
-            margin-bottom: 16px;
-        }
-
-        .input-label {
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 6px;
-            display: block;
-        }
-
         .form-control {
             width: 100%;
             background: var(--card-bg);
@@ -422,11 +501,8 @@
             font-size: 15px;
             color: var(--text-main);
             outline: none;
-        }
-
-        .form-control:focus {
-            border-color: var(--toss-blue);
-            background: #fff;
+            margin-top: 6px;
+            margin-bottom: 16px;
         }
 
         .btn-submit {
@@ -439,7 +515,6 @@
             font-size: 16px;
             font-weight: 700;
             cursor: pointer;
-            margin-top: 10px;
         }
     </style>
 </head>
@@ -453,14 +528,19 @@
             </div>
             <div class="header-icons">
                 <i class="fa-regular fa-bell" onclick="alert('새로운 입출금 알림이 없습니다.')"></i>
-                <i class="fa-solid fa-bars" onclick="alert('HK BANK 설정 및 보안 센터')"></i>
+                <i class="fa-solid fa-bars" onclick="toggleDrawer()" style="cursor:pointer;"></i>
             </div>
         </header>
 
         <!-- 메인 화면 -->
         <main>
-           
-            <!-- 1. HK 주거래 입출금통장 -->
+            <!-- 웰컴 배너 (호칭 제거 완료) -->
+            <div class="welcome-banner">
+                <h2>글로벌 슈퍼 뱅킹 플랫폼 👋</h2>
+                <p>오늘도 안전하고 스마트한 금융 생활을 지원합니다.</p>
+            </div>
+
+            <!-- 1. HK 주거래 통장 -->
             <div class="account-card">
                 <div class="account-top">
                     <span class="account-name"><i class="fa-solid fa-wallet" style="color:var(--toss-blue);"></i> HK 주거래통장</span>
@@ -473,10 +553,10 @@
                 </div>
             </div>
 
-            <!-- 2. 파이(Pi) & 자산 신탁 볼트 계좌 -->
+            <!-- 2. Pi 신탁 세이프박스 -->
             <div class="account-card">
                 <div class="account-top">
-                    <span class="account-name"><span style="color:#f7931a; font-weight:900;">π</span> Pi 신탁 & 세이프박스</span>
+                    <span class="account-name"><span style="color:var(--pi-color); font-weight:900;">π</span> Pi 신탁 & 세이프박스</span>
                     <span class="account-badge" style="background:#e6fffa; color:#00a3c4;">연 31.41% 복리</span>
                 </div>
                 <div class="account-balance" id="piVaultDisplay">314,159.00 PI</div>
@@ -486,7 +566,7 @@
                 </div>
             </div>
 
-            <!-- 빠른 메뉴 그리드 (토스/카뱅 스타일) -->
+            <!-- 빠른 메뉴 그리드 -->
             <div class="quick-menu-grid">
                 <div class="quick-menu-item" onclick="openModal('transfer')">
                     <div class="quick-icon"><i class="fa-solid fa-paper-plane"></i></div>
@@ -533,46 +613,77 @@
                         </div>
                         <div class="history-amount minus">- 4,500원</div>
                     </div>
-                    <div class="history-item">
-                        <div class="history-left">
-                            <div class="history-icon"><i class="fa-solid fa-building-columns"></i></div>
-                            <div class="history-info">
-                                <h4>타행 자동이체 (K뱅크)</h4>
-                                <p>10월 28일</p>
-                            </div>
-                        </div>
-                        <div class="history-amount minus">- 1,000,000원</div>
-                    </div>
+                </div>
+            </div>
+
+            <!-- 🌟 유튜브 & 틱톡 맨 아래 푸터 영역 -->
+            <div class="footer-media-section">
+                <div class="footer-media-title">Official Media Channels</div>
+                <div class="footer-media-buttons">
+                    <a href="https://www.youtube.com/@Hyekong2026" target="_blank" class="footer-media-btn youtube">
+                        <i class="fa-brands fa-youtube"></i> YouTube
+                    </a>
+                    <a href="https://www.tiktok.com/@hyekong2026" target="_blank" class="footer-media-btn tiktok">
+                        <i class="fa-brands fa-tiktok"></i> TikTok
+                    </a>
                 </div>
             </div>
         </main>
 
         <!-- 하단 네비게이션 탭 -->
         <nav class="bottom-nav">
-            <a class="nav-item active" onclick="switchTab(this)"><i class="fa-solid fa-house"></i><span>홈</span></a>
-            <a class="nav-item" onclick="switchTab(this)"><i class="fa-solid fa-chart-pie"></i><span>자산</span></a>
-            <a class="nav-item" onclick="switchTab(this)"><i class="fa-solid fa-bolt"></i><span>혜택</span></a>
-            <a class="nav-item" onclick="switchTab(this)"><i class="fa-solid fa-user"></i><span>MY</span></a>
+            <a class="nav-item active"><i class="fa-solid fa-house"></i><span>홈</span></a>
+            <a class="nav-item" onclick="alert('자산 통합 리포트')"><i class="fa-solid fa-chart-pie"></i><span>자산</span></a>
+            <a class="nav-item" onclick="alert('혜택 및 UBI 분배')"><i class="fa-solid fa-bolt"></i><span>혜택</span></a>
+            <a class="nav-item" onclick="toggleDrawer()"><i class="fa-solid fa-bars"></i><span>전체메뉴</span></a>
         </nav>
     </div>
 
-    <!-- 바텀시트 모달 (이체/채우기 등) -->
+    <!-- 🌟 삼선 햄버거 메뉴 서랍 (Drawer) -->
+    <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawerOutside(event)">
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <span class="drawer-title">HK NAVIGATOR</span>
+                <button onclick="toggleDrawer()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-title">Official Media Hubs</div>
+                <a class="menu-item" href="https://www.youtube.com/@Hyekong2026" target="_blank"><i class="fa-brands fa-youtube" style="color:#ff0000;"></i> YouTube (@Hyekong2026)</a>
+                <a class="menu-item" href="https://www.tiktok.com/@hyekong2026" target="_blank"><i class="fa-brands fa-tiktok" style="color:#fe2c55;"></i> TikTok (@hyekong2026)</a>
+            </div>
+            <div class="menu-group">
+                <div class="menu-group-title">HK Global Ecosystem Hubs</div>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-ROBOT" target="_blank"><i class="fa-solid fa-robot"></i> 로봇: HK-ROBOT</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-NEXUS" target="_blank"><i class="fa-solid fa-glasses"></i> 스마트 글래스: HK-NEXUS</a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-UAM" target="_blank"><i class="fa-solid fa-helicopter"></i> 도심항공교통: HK-UAM</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 팝업 창 -->
     <div class="modal" id="bankModal" onclick="closeModalOutside(event)">
         <div class="modal-sheet">
-            <div class="sheet-header">
-                <h3 class="sheet-title" id="modalTitle">간편 이체</h3>
-                <button class="sheet-close" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+                <h3 id="modalTitle" style="font-size:18px; font-weight:700;">금융 작업</h3>
+                <button onclick="closeModal()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
             </div>
-            <div id="modalBodyContent">
-                <!-- 동적 폼 삽입 -->
-            </div>
+            <div id="modalBodyContent"></div>
         </div>
     </div>
 
     <!-- 뱅킹 로직 스크립트 -->
     <script>
         let currentBalance = 314159000;
-        let piBalance = 314159.00;
+
+        function toggleDrawer() {
+            document.getElementById('drawerOverlay').classList.toggle('active');
+        }
+
+        function closeDrawerOutside(e) {
+            if (e.target.id === 'drawerOverlay') {
+                toggleDrawer();
+            }
+        }
 
         function openModal(type) {
             const modal = document.getElementById('bankModal');
@@ -582,12 +693,8 @@
             if (type === 'transfer') {
                 title.innerText = "계좌간 간편 송금";
                 content.innerHTML = `
-                    <div class="input-group">
-                        <label class="input-label">받을 분 계좌번호 또는 연락처</label>
-                        <input class="form-control" placeholder="은행명 및 계좌번호 입력 (예: 카카오 3333-...)">
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">보낼 금액</label>
+                    <div style="margin-bottom:16px;">
+                        <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">보낼 금액</label>
                         <input class="form-control" id="transferAmt" placeholder="금액 입력 (원)">
                     </div>
                     <button class="btn-submit" onclick="executeTransfer()">송금하기</button>
@@ -595,40 +702,17 @@
             } else if (type === 'deposit') {
                 title.innerText = "계좌 잔액 채우기";
                 content.innerHTML = `
-                    <div class="input-group">
-                        <label class="input-label">연결된 내 계좌 (K뱅크 / 카카오페이)</label>
-                        <input class="form-control" value="K뱅크 123-456-78900" readonly>
-                    </div>
-                    <div class="input-group">
-                        <label class="input-label">채울 금액</label>
+                    <div style="margin-bottom:16px;">
+                        <label style="font-size:13px; font-weight:600; color:var(--text-muted); display:block; margin-bottom:6px;">채울 금액</label>
                         <input class="form-control" id="depositAmt" placeholder="채울 금액 입력 (원)">
                     </div>
                     <button class="btn-submit" onclick="executeDeposit()">가져오기</button>
                 `;
-            } else if (type === 'loan') {
-                title.innerText = "HK 마이너스 한도 대출";
+            } else {
+                title.innerText = "프로세스 실행";
                 content.innerHTML = `
-                    <div style="font-size:14px; color:var(--text-muted); margin-bottom:16px; line-height:1.5;">
-                        회장님 신용등급 기준 <strong>최대 100억원</strong>까지 연 3.1% 금리로 즉시 실행 가능합니다.
-                    </div>
-                    <button class="btn-submit" onclick="alert('마이너스 대출 약정이 승인되었습니다!'); closeModal();">100억 원 한도 즉시 실행</button>
-                `;
-            } else if (type === 'vault') {
-                title.innerText = "Pi 신탁 세이프박스 관리";
-                content.innerHTML = `
-                    <div style="font-size:14px; color:var(--text-muted); margin-bottom:16px;">
-                        현재 예치된 Pi 자산에서 연 31.41% 복리 이자가 실시간으로 적립되고 있습니다.
-                    </div>
-                    <button class="btn-submit" onclick="alert('이자 수익금 정산 및 재예치가 완료되었습니다.'); closeModal();">이자 받기 및 재예치</button>
-                `;
-            } else if (type === 'swap' || type === 'pay') {
-                title.innerText = "HK 즉시 환전 및 QR 결제";
-                content.innerHTML = `
-                    <div class="input-group">
-                        <label class="input-label">환전 및 결제 승인 코드</label>
-                        <input class="form-control" value="HK-SECURE-AUTH-2026" readonly>
-                    </div>
-                    <button class="btn-submit" onclick="alert('정상 처리되었습니다!'); closeModal();">확인</button>
+                    <div style="font-size:14px; color:var(--text-muted); margin-bottom:16px;">정상적으로 연결되었습니다.</div>
+                    <button class="btn-submit" onclick="closeModal()">확인</button>
                 `;
             }
 
@@ -652,10 +736,6 @@
                 alert("올바른 금액을 입력해 주세요.");
                 return;
             }
-            if (amt > currentBalance) {
-                alert("잔액이 부족합니다.");
-                return;
-            }
             currentBalance -= amt;
             document.getElementById('mainBalanceDisplay').innerText = currentBalance.toLocaleString() + " 원";
             alert(amt.toLocaleString() + "원이 안전하게 송금되었습니다!");
@@ -673,11 +753,6 @@
             document.getElementById('mainBalanceDisplay').innerText = currentBalance.toLocaleString() + " 원";
             alert(amt.toLocaleString() + "원이 계좌로 충전되었습니다!");
             closeModal();
-        }
-
-        function switchTab(el) {
-            document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
-            el.classList.add('active');
         }
     </script>
 </body>
