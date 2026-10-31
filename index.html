@@ -137,18 +137,18 @@
         }
 
         .welcome-banner {
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .welcome-banner h2 {
-            font-size: 20px;
+            font-size: 21px;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 4px;
         }
 
         .welcome-banner p {
-            font-size: 12px;
+            font-size: 13px;
             color: var(--text-muted);
         }
 
@@ -164,8 +164,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 6px;
-            padding: 12px 8px;
+            gap: 8px;
+            padding: 12px;
             border-radius: 12px;
             font-size: 12px;
             font-weight: 700;
@@ -174,13 +174,13 @@
         }
 
         .media-btn.youtube {
-            background: rgba(255, 0, 0, 0.08);
+            background: rgba(255, 0, 0, 0.1);
             color: #ff0000;
             border: 1px solid rgba(255, 0, 0, 0.2);
         }
 
         .media-btn.tiktok {
-            background: rgba(254, 44, 85, 0.08);
+            background: rgba(254, 44, 85, 0.1);
             color: #fe2c55;
             border: 1px solid rgba(254, 44, 85, 0.2);
         }
@@ -493,13 +493,13 @@
         </div>
 
         <main>
-            <!-- 웰컴 배너 (호칭 제거 완료) -->
+            <!-- 웰컴 배너 -->
             <div class="welcome-banner">
-                <h2 data-i18n="welcomeMsg">글로벌 슈퍼 뱅킹 플랫폼 👋</h2>
+                <h2 data-i18n="welcomeMsg">글로벌 슈퍼 뱅킹 환영합니다 👋</h2>
                 <p data-i18n="subWelcome">HK 글로벌 슈퍼 뱅킹 시스템 가동 중</p>
             </div>
 
-            <!-- 유튜브 & 틱톡 공식 채널 바로가기 버튼 배너 -->
+            <!-- 유튜브 & 틱톡 공식 채널 바로가기 버튼 -->
             <div class="media-banner">
                 <a href="https://www.youtube.com/@Hyekong2026" target="_blank" class="media-btn youtube">
                     <i class="fa-brands fa-youtube" style="font-size: 16px;"></i> YouTube (@Hyekong2026)
@@ -535,7 +535,7 @@
                 </div>
             </div>
 
-            <!-- 빠른 메뉴 그리드 -->
+            <!-- 빠른 메뉴 그리드 (10대 연동망 바로가기) -->
             <div class="quick-menu-grid">
                 <div class="quick-menu-item" onclick="openModal('transfer')">
                     <div class="quick-icon"><i class="fa-solid fa-paper-plane"></i></div>
@@ -604,7 +604,7 @@
 
         const dict = {
             ko: {
-                langLabel: "🌍 60개국어 다국어 엔진", welcomeMsg: "글로벌 슈퍼 뱅킹 플랫폼 👋", subWelcome: "HK 글로벌 슈퍼 뱅킹 시스템 가동 중",
+                langLabel: "🌍 60개국어 다국어 엔진", welcomeMsg: "글로벌 슈퍼 뱅킹 환영합니다 👋", subWelcome: "HK 글로벌 슈퍼 뱅킹 시스템 가동 중",
                 acc1_title: "HK 주거래통장", acc1_badge: "출금가능", btn_transfer: "송금하기", btn_deposit: "채우기",
                 acc2_title: "Pi 신탁 세이프박스", acc2_badge: "연 31.41% 복리", btn_manage: "관리하기", btn_swap: "즉시 환전",
                 net_transfer: "송금", net_deposit: "예치", net_ubi: "기본소득", net_swap: "스왑",
