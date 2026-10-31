@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -510,33 +511,33 @@
         <!-- 메인 화면 -->
         <main>
             <div class="welcome-banner">
-                <h2>글로벌 슈퍼 뱅킹 플랫폼 👋</h2>
-                <p>오늘도 안전하고 스마트한 금융 생활을 지원합니다.</p>
+                <h2 id="txtWelcome">글로벌 슈퍼 뱅킹 플랫폼 👋</h2>
+                <p id="txtSubWelcome">오늘도 안전하고 스마트한 금융 생활을 지원합니다.</p>
             </div>
 
             <!-- 1. HK 주거래 통장 -->
             <div class="account-card">
                 <div class="account-top">
-                    <span class="account-name"><i class="fa-solid fa-wallet" style="color:var(--toss-blue);"></i> HK 주거래통장</span>
-                    <span class="account-badge">출금가능</span>
+                    <span class="account-name"><i class="fa-solid fa-wallet" style="color:var(--toss-blue);"></i> <span id="txtAccountName">HK 주거래통장</span></span>
+                    <span class="account-badge" id="txtWithdrawable">출금가능</span>
                 </div>
                 <div class="account-balance" id="mainBalanceDisplay">314,159,000 원</div>
                 <div class="account-actions">
-                    <button class="btn-action" onclick="openModal('transfer')">송금하기</button>
-                    <button class="btn-action primary" onclick="openModal('deposit')">채우기</button>
+                    <button class="btn-action" onclick="openModal('transfer')" id="btnTransfer">송금하기</button>
+                    <button class="btn-action primary" onclick="openModal('deposit')" id="btnDeposit">채우기</button>
                 </div>
             </div>
 
             <!-- 2. Pi 신탁 세이프박스 -->
             <div class="account-card">
                 <div class="account-top">
-                    <span class="account-name"><span style="color:var(--pi-color); font-weight:900;">π</span> Pi 신탁 & 세이프박스</span>
-                    <span class="account-badge" style="background:#e6fffa; color:#00a3c4;">연 31.41% 복리</span>
+                    <span class="account-name"><span style="color:var(--pi-color); font-weight:900;">π</span> <span id="txtPiVaultName">Pi 신탁 & 세이프박스</span></span>
+                    <span class="account-badge" style="background:#e6fffa; color:#00a3c4;" id="txtPiRate">연 31.41% 복리</span>
                 </div>
                 <div class="account-balance" id="piVaultDisplay">314,159.00 PI</div>
                 <div class="account-actions">
-                    <button class="btn-action" onclick="openModal('vault')">관리하기</button>
-                    <button class="btn-action primary" onclick="openModal('swap')">즉시 환전</button>
+                    <button class="btn-action" onclick="openModal('vault')" id="btnManage">관리하기</button>
+                    <button class="btn-action primary" onclick="openModal('swap')" id="btnSwap">즉시 환전</button>
                 </div>
             </div>
 
@@ -544,35 +545,35 @@
             <div class="quick-menu-grid">
                 <div class="quick-menu-item" onclick="openModal('transfer')">
                     <div class="quick-icon"><i class="fa-solid fa-paper-plane"></i></div>
-                    <span class="quick-label">이체</span>
+                    <span class="quick-label" id="qMenu1">이체</span>
                 </div>
                 <div class="quick-menu-item" onclick="openModal('deposit')">
                     <div class="quick-icon"><i class="fa-solid fa-won-sign"></i></div>
-                    <span class="quick-label">채우기</span>
+                    <span class="quick-label" id="qMenu2">채우기</span>
                 </div>
                 <div class="quick-menu-item" onclick="openModal('loan')">
                     <div class="quick-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
-                    <span class="quick-label">마이너스대출</span>
+                    <span class="quick-label" id="qMenu3">마이너스대출</span>
                 </div>
                 <div class="quick-menu-item" onclick="openModal('pay')">
                     <div class="quick-icon"><i class="fa-solid fa-qrcode"></i></div>
-                    <span class="quick-label">QR결제</span>
+                    <span class="quick-label" id="qMenu4">QR결제</span>
                 </div>
             </div>
 
             <!-- 최근 거래 내역 -->
             <div class="section-box">
                 <div class="section-title-row">
-                    <h3 class="section-title">최근 거래 내역</h3>
-                    <span style="font-size:12px; color:var(--text-muted); cursor:pointer;" onclick="alert('전체 내역 조회')">전체보기</span>
+                    <h3 class="section-title" id="txtHistoryTitle">최근 거래 내역</h3>
+                    <span style="font-size:12px; color:var(--text-muted); cursor:pointer;" onclick="alert('전체 내역 조회')" id="txtViewAll">전체보기</span>
                 </div>
                 <div class="history-list">
                     <div class="history-item">
                         <div class="history-left">
                             <div class="history-icon"><i class="fa-solid fa-robot"></i></div>
                             <div class="history-info">
-                                <h4>HK-ROBOT 개발 지원금</h4>
-                                <p>오늘 오전 10:24</p>
+                                <h4 id="txtHist1Title">HK-ROBOT 개발 지원금</h4>
+                                <p id="txtHist1Time">오늘 오전 10:24</p>
                             </div>
                         </div>
                         <div class="history-amount plus">+ 50,000,000원</div>
@@ -581,8 +582,8 @@
                         <div class="history-left">
                             <div class="history-icon"><i class="fa-solid fa-mug-hot"></i></div>
                             <div class="history-info">
-                                <h4>스타벅스 (블랙커피)</h4>
-                                <p>어제 오후 2:15</p>
+                                <h4 id="txtHist2Title">스타벅스 (블랙커피)</h4>
+                                <p id="txtHist2Time">어제 오후 2:15</p>
                             </div>
                         </div>
                         <div class="history-amount minus">- 4,500원</div>
@@ -593,24 +594,24 @@
 
         <!-- 하단 네비게이션 탭 -->
         <nav class="bottom-nav">
-            <a class="nav-item active"><i class="fa-solid fa-house"></i><span>홈</span></a>
-            <a class="nav-item" onclick="alert('자산 통합 리포트')"><i class="fa-solid fa-chart-pie"></i><span>자산</span></a>
-            <a class="nav-item" onclick="alert('혜택 및 UBI 분배')"><i class="fa-solid fa-bolt"></i><span>혜택</span></a>
-            <a class="nav-item" onclick="toggleDrawer()"><i class="fa-solid fa-bars"></i><span>전체메뉴</span></a>
+            <a class="nav-item active"><i class="fa-solid fa-house"></i><span id="navHome">홈</span></a>
+            <a class="nav-item" onclick="alert('자산 통합 리포트')"><i class="fa-solid fa-chart-pie"></i><span id="navAsset">자산</span></a>
+            <a class="nav-item" onclick="alert('혜택 및 UBI 분배')"><i class="fa-solid fa-bolt"></i><span id="navBenefit">혜택</span></a>
+            <a class="nav-item" onclick="toggleDrawer()"><i class="fa-solid fa-bars"></i><span id="navMenu">전체메뉴</span></a>
         </nav>
     </div>
 
-    <!-- 🌟 삼선 햄버거 메뉴 서랍 (60개국어 + 공식 미디어 + 9대 미래 혁신 생태계 허브) -->
+    <!-- 🌟 삼선 햄버거 메뉴 서랍 (핵심 16개국어 다국어 엔진) -->
     <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawerOutside(event)">
         <div class="drawer-content">
             <div class="drawer-header">
-                <span class="drawer-title">HK WORLD NAVIGATOR</span>
+                <span class="drawer-title" id="drawerTitle">HK WORLD NAVIGATOR</span>
                 <button onclick="toggleDrawer()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
             </div>
 
-            <!-- 🌐 60개국어 다국어 선택 엔진 -->
+            <!-- 🌐 핵심 16개국어 다국어 선택 엔진 -->
             <div class="menu-group">
-                <div class="menu-group-title">🌍 60-Language Engine</div>
+                <div class="menu-group-title" id="langGroupTitle">🌍 Core 16-Language Engine</div>
                 <select class="drawer-lang-select" id="langSelect" onchange="changeGlobalLanguage(this.value)">
                     <option value="ko" selected>🇰🇷 한국어 (Korean)</option>
                     <option value="en">🇺🇸 English (영어)</option>
@@ -624,78 +625,26 @@
                     <option value="de">🇩🇪 Deutsch (독일어)</option>
                     <option value="it">🇮🇹 Italiano (이탈리아어)</option>
                     <option value="fr">🇫🇷 Français (프랑스어)</option>
+                    <option value="yo">🇳🇬 Yorùbá (나이지리아)</option>
+                    <option value="pcm">🇨🇲 Pidgin (카메룬)</option>
+                    <option value="zu">🇿🇦 isiZulu (남아공)</option>
                     <option value="es">🇪🇸 Español (스페인어)</option>
-                    <option value="pt">🇵🇹 Português (포르투갈어)</option>
-                    <option value="tr">🇹🇷 Türkçe (터키어)</option>
-                    <option value="nl">🇳🇱 Nederlands (네덜란드어)</option>
-                    <option value="pl">🇵🇱 Polski (폴란드어)</option>
-                    <option value="uk">🇺🇦 Українська (우크라이나어)</option>
-                    <option value="sv">🇸🇪 Svenska (스웨덴어)</option>
-                    <option value="no">🇳🇴 Norsk (노르웨이어)</option>
-                    <option value="fi">🇫🇮 Suomi (핀란드어)</option>
-                    <option value="da">🇩🇰 Dansk (덴마크어)</option>
-                    <option value="cs">🇨🇿 Čeština (체코어)</option>
-                    <option value="hu">🇭🇺 Magyar (헝가리어)</option>
-                    <option value="ro">🇷🇴 Română (루마니아어)</option>
-                    <option value="el">🇬🇷 Ελληνικά (그리스어)</option>
                     <option value="hi">🇮🇳 हिन्दी (힌디어)</option>
-                    <option value="bn">🇧🇩 বাংলা (벵골어)</option>
-                    <option value="ms">🇲🇾 Bahasa Melayu (말레이어)</option>
-                    <option value="fil">🇵🇭 Tagalog (필리핀어)</option>
-                    <option value="my">🇲🇲 မြန်မာဘာသာ (미얀마어)</option>
-                    <option value="km">🇰🇭 ភាសាខ្មែរ (크메르어)</option>
-                    <option value="lo">🇱🇦 ພາສາລາວ (라오어)</option>
-                    <option value="ur">🇵🇰 اردو (우르두어)</option>
-                    <option value="fa">🇮🇷 فارسی (페르시아어)</option>
-                    <option value="he">🇮🇱 עברית (히브리어)</option>
-                    <option value="sw">🇰🇪 Kiswahili (스왈리어)</option>
-                    <option value="ha">🇳🇬 Hausa (하우사어)</option>
-                    <option value="yo">🇳🇬 Yorùbá (요루바어)</option>
-                    <option value="ig">🇳🇬 Asụsụ Igbo (이그보어)</option>
-                    <option value="am">🇪🇹 አማርኛ (암하라어)</option>
-                    <option value="zu">🇿🇦 isiZulu (줄루어)</option>
-                    <option value="xh">🇿🇦 isiXhosa (코사어)</option>
-                    <option value="af">🇿🇦 Afrikaans (아프리칸스어)</option>
-                    <option value="mg">🇲🇬 Malagasy (마다가스카르어)</option>
-                    <option value="sn">🇿🇼 chiShona (쇼나어)</option>
-                    <option value="st">🇱🇸 Sesotho (세소토어)</option>
-                    <option value="tn">🇧🇼 Setswana (츠와나어)</option>
-                    <option value="ny">🇲🇼 Chichewa (체와어)</option>
-                    <option value="rw">🇷🇼 Kinyarwanda (키냐르완다어)</option>
-                    <option value="so">🇸🇴 Soomaali (소말리아어)</option>
-                    <option value="ln">🇨🇩 Lingala (링갈리어)</option>
-                    <option value="wo">🇸🇳 Wolof (월로프어)</option>
-                    <option value="ff">🇬🇳 Fulfulde (풀라어)</option>
-                    <option value="ti">🇪🇷 ትግርኛ (티그리냐어)</option>
-                    <option value="om">🇪🇹 Afaan Oromoo (오로모어)</option>
-                    <option value="ka">🇬🇪 ქართული (조지아어)</option>
-                    <option value="hy">🇦🇲 Հայերեն (아르메니아어)</option>
-                    <option value="az">🇦🇿 Azərbaycanca (아제르바이잔어)</option>
-                    <option value="kk">🇰🇿 Қазақ тілі (카자흐어)</option>
-                    <option value="uz">🇺🇿 Oʻzbekcha (우즈베크어)</option>
-                    <option value="mn">🇲🇳 Монгол (몽гол어)</option>
                 </select>
-            </div>
-
-            <!-- 공식 미디어 허브 -->
-            <div class="menu-group">
-                <div class="menu-group-title">Official Media Hubs</div>
-                <a class="menu-item" href="https://www.youtube.com/@Hyekong2026" target="_blank"><i class="fa-brands fa-youtube" style="color:#ff0000;"></i> YouTube (@Hyekong2026)</a>
-                <a class="menu-item" href="https://www.tiktok.com/@hyekong2026" target="_blank"><i class="fa-brands fa-tiktok" style="color:#fe2c55;"></i> TikTok (@hyekong2026)</a>
             </div>
 
             <!-- 🌟 9대 미래 혁신 생태계 허브 -->
             <div class="menu-group">
-                <div class="menu-group-title">HK 9 Major Future Ecosystems</div>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-WORLDBANK" target="_blank"><i class="fa-solid fa-building-columns" style="color:#0064ff;"></i> 1. 웹3 디지털 뱅킹 (HK WorldBank)</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-ROBOT" target="_blank"><i class="fa-solid fa-robot" style="color:#00c853;"></i> 2. 휴머노이드 로봇 (HK-ROBOT)</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-NEXUS" target="_blank"><i class="fa-solid fa-glasses" style="color:#9c27b0;"></i> 3. AI 스마트 글래스 (HK-NEXUS)</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-UAM" target="_blank"><i class="fa-solid fa-helicopter" style="color:#ff9800;"></i> 4. 도심항공교통 (HK-UAM)</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-QUANTUM" target="_blank"><i class="fa-solid fa-dna" style="color:#00bcd4;"></i> 5. 퀀텀 바이오 (HK-QUANTUM)</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-SPACE" target="_blank"><i class="fa-solid fa-rocket" style="color:#673ab7;"></i> 6. 우주항공 (HK-SPACE)</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-FUSION" target="_blank"><i class="fa-solid fa-sun" style="color:#ff5722;"></i> 7. 인공태양 핵융합 (HK-FUSION)</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-DEFENSE" target="_blank"><i class="fa-solid fa-shield-halved" style="color:#607d8b;"></i> 8. 첨단 방산산업 (HK-DEFENSE)</a>
-                <a class="menu-item" href="https://ljw2358.github.io/HK-MEGA" target="_blank"><i class="fa-solid fa-city" style="color:#e91e63;"></i> 9. 해오름 특별시 (HK-MEGA CITY)</a>
+                <div class="menu-group-title" id="ecoGroupTitle">HK 9 Major Future Ecosystems</div>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-WORLDBANK" target="_blank"><i class="fa-solid fa-building-columns" style="color:#0064ff;"></i> <span id="eco1">1. 웹3 디지털 뱅킹 (HK WorldBank)</span></a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-ROBOT" target="_blank"><i class="fa-solid fa-robot" style="color:#00c853;"></i> <span id="eco2">2. 휴머노이드 로봇 (HK-ROBOT)</span></a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-NEXUS" target="_blank"><i class="fa-solid fa-glasses" style="color:#9c27b0;"></i> <span id="eco3">3. AI 스마트 글래스 (HK-NEXUS)</span></a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-UAM" target="_blank"><i class="fa-solid fa-helicopter" style="color:#ff9800;"></i> <span id="eco4">4. 도심항공교통 (HK-UAM)</span></a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-QUANTUM" target="_blank"><i class="fa-solid fa-dna" style="color:#00bcd4;"></i> <span id="eco5">5. 퀀텀 바이오 (HK-QUANTUM)</span></a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-SPACE" target="_blank"><i class="fa-solid fa-rocket" style="color:#673ab7;"></i> <span id="eco6">6. 우주항공 (HK-SPACE)</span></a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-FUSION" target="_blank"><i class="fa-solid fa-sun" style="color:#ff5722;"></i> <span id="eco7">7. 인공태양 핵융합 (HK-FUSION)</span></a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-DEFENSE" target="_blank"><i class="fa-solid fa-shield-halved" style="color:#607d8b;"></i> <span id="eco8">8. 첨단 방산산업 (HK-DEFENSE)</span></a>
+                <a class="menu-item" href="https://ljw2358.github.io/HK-MEGA" target="_blank"><i class="fa-solid fa-city" style="color:#e91e63;"></i> <span id="eco9">9. 해오름 특별시 (HK-MEGA CITY)</span></a>
             </div>
         </div>
     </div>
@@ -711,12 +660,409 @@
         </div>
     </div>
 
-    <!-- 스크립트 -->
+    <!-- 스크립트 및 16개 국어 전체 실시간 번역 사전 데이터베이스 엔진 -->
     <script>
         let currentBalance = 314159000;
 
+        const translations = {
+            ko: {
+                welcome: "글로벌 슈퍼 뱅킹 플랫폼 👋",
+                subWelcome: "오늘도 안전하고 스마트한 금융 생활을 지원합니다.",
+                accountName: "HK 주거래통장",
+                withdrawable: "출금가능",
+                btnTransfer: "송금하기",
+                btnDeposit: "채우기",
+                piVaultName: "Pi 신탁 & 세이프박스",
+                piRate: "연 31.41% 복리",
+                btnManage: "관리하기",
+                btnSwap: "즉시 환전",
+                qMenu1: "이체",
+                qMenu2: "채우기",
+                qMenu3: "마이너스대출",
+                qMenu4: "QR결제",
+                historyTitle: "최근 거래 내역",
+                viewAll: "전체보기",
+                navHome: "홈",
+                navAsset: "자산",
+                navBenefit: "혜택",
+                navMenu: "전체메뉴"
+            },
+            en: {
+                welcome: "Global Super Banking Platform 👋",
+                subWelcome: "Supporting your safe and smart financial life every day.",
+                accountName: "HK Main Account",
+                withdrawable: "Available",
+                btnTransfer: "Transfer",
+                btnDeposit: "Deposit",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Manage",
+                btnSwap: "Instant Swap",
+                qMenu1: "Transfer",
+                qMenu2: "Deposit",
+                qMenu3: "Credit Loan",
+                qMenu4: "QR Pay",
+                historyTitle: "Recent Transactions",
+                viewAll: "View All",
+                navHome: "Home",
+                navAsset: "Assets",
+                navBenefit: "Benefits",
+                navMenu: "Menu"
+            },
+            zh: {
+                welcome: "全球超级银行平台 👋",
+                subWelcome: "每天支持您安全、智能的金融生活。",
+                accountName: "HK 主账户",
+                withdrawable: "可提现",
+                btnTransfer: "转账",
+                btnDeposit: "充值",
+                piVaultName: "Pi 信托与保险箱",
+                piRate: "年化 31.41%",
+                btnManage: "管理",
+                btnSwap: "即时兑换",
+                qMenu1: "转账",
+                qMenu2: "充值",
+                qMenu3: "信用贷款",
+                qMenu4: "QR支付",
+                historyTitle: "近期交易",
+                viewAll: "查看全部",
+                navHome: "首页",
+                navAsset: "资产",
+                navBenefit: "福利",
+                navMenu: "菜单"
+            },
+            ja: {
+                welcome: "グローバルスーパーバンキングプラットフォーム 👋",
+                subWelcome: "安全でスマートな金融生活を毎日サポートします。",
+                accountName: "HK メイン口座",
+                withdrawable: "出金可能",
+                btnTransfer: "送金",
+                btnDeposit: "チャージ",
+                piVaultName: "Pi トラスト＆セーフボックス",
+                piRate: "年利 31.41%",
+                btnManage: "管理",
+                btnSwap: "即時スワップ",
+                qMenu1: "送金",
+                qMenu2: "チャージ",
+                qMenu3: "カードローン",
+                qMenu4: "QR決済",
+                historyTitle: "最近の取引履歴",
+                viewAll: "すべて見る",
+                navHome: "ホーム",
+                navAsset: "資産",
+                navBenefit: "特典",
+                navMenu: "メニュー"
+            },
+            ru: {
+                welcome: "Глобальная супер-банковская платформа 👋",
+                subWelcome: "Безопасная и умная финансовая жизнь каждый день.",
+                accountName: "Основной счет HK",
+                withdrawable: "Доступно",
+                btnTransfer: "Перевод",
+                btnDeposit: "Пополнить",
+                piVaultName: "Pi Траст и Сейф",
+                piRate: "31.41% годовых",
+                btnManage: "Управление",
+                btnSwap: "Обмен",
+                qMenu1: "Перевод",
+                qMenu2: "Пополнить",
+                qMenu3: "Кредит",
+                qMenu4: "QR Оплата",
+                historyTitle: "История транзакций",
+                viewAll: "Все",
+                navHome: "Главная",
+                navAsset: "Активы",
+                navBenefit: "Бонусы",
+                navMenu: "Меню"
+            },
+            vi: {
+                welcome: "Nền tảng Ngân hàng Siêu cấp Toàn cầu 👋",
+                subWelcome: "Hỗ trợ cuộc sống tài chính an toàn và thông minh mỗi ngày.",
+                accountName: "Tài khoản chính HK",
+                withdrawable: "Có thể rút",
+                btnTransfer: "Chuyển tiền",
+                btnDeposit: "Nạp tiền",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Quản lý",
+                btnSwap: "Đổi ngay",
+                qMenu1: "Chuyển",
+                qMenu2: "Nạp",
+                qMenu3: "Vay tín chấp",
+                qMenu4: "QR Pay",
+                historyTitle: "Giao dịch gần đây",
+                viewAll: "Xem tất cả",
+                navHome: "Trang chủ",
+                navAsset: "Tài sản",
+                navBenefit: "Ưu đãi",
+                navMenu: "Menu"
+            },
+            th: {
+                welcome: "แพลตฟอร์มธนาคารซูเปอร์ระดับโลก 👋",
+                subWelcome: "สนับสนุนชีวิตทางการเงินที่ปลอดภัยและชาญฉลาดของคุณทุกวัน",
+                accountName: "บัญชีหลัก HK",
+                withdrawable: "ถอนได้",
+                btnTransfer: "โอนเงิน",
+                btnDeposit: "เติมเงิน",
+                piVaultName: "Pi ทรัสต์ & เซฟบ็อกซ์",
+                piRate: "31.41% ต่อปี",
+                btnManage: "จัดการ",
+                btnSwap: "แลกเปลี่ยนทันที",
+                qMenu1: "โอน",
+                qMenu2: "เติม",
+                qMenu3: "สินเชื่อ",
+                qMenu4: "QR เพย์",
+                historyTitle: "ประวัติการทำธุรกรรม",
+                viewAll: "ดูทั้งหมด",
+                navHome: "หน้าแรก",
+                navAsset: "สินทรัพย์",
+                navBenefit: "สิทธิประโยชน์",
+                navMenu: "เมนู"
+            },
+            id: {
+                welcome: "Platform Perbankan Super Global 👋",
+                subWelcome: "Mendukung kehidupan finansial yang aman dan cerdas setiap hari.",
+                accountName: "Akun Utama HK",
+                withdrawable: "Tersedia",
+                btnTransfer: "Transfer",
+                btnDeposit: "Setor",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Kelola",
+                btnSwap: "Tukar Cepat",
+                qMenu1: "Transfer",
+                qMenu2: "Setor",
+                qMenu3: "Pinjaman",
+                qMenu4: "QR Pay",
+                historyTitle: "Transaksi Terakhir",
+                viewAll: "Lihat Semua",
+                navHome: "Beranda",
+                navAsset: "Aset",
+                navBenefit: "Manfaat",
+                navMenu: "Menu"
+            },
+            ps: {
+                welcome: "منصة الخدمات المصرفية العالمية الخارقة 👋",
+                subWelcome: "دعم حياتك المالية الآمنة والذكية كل يوم.",
+                accountName: "حساب HK الرئيسي",
+                withdrawable: "متاح للسحب",
+                btnTransfer: "تحويل",
+                btnDeposit: "إيداع",
+                piVaultName: "صندوق أمان Pi",
+                piRate: "عائد سنوي 31.41%",
+                btnManage: "إدارة",
+                btnSwap: "تبديل فوري",
+                qMenu1: "تحويل",
+                qMenu2: "إيداع",
+                qMenu3: "قرض",
+                qMenu4: "دفع QR",
+                historyTitle: "المعاملات الأخيرة",
+                viewAll: "عرض الكل",
+                navHome: "الرئيسية",
+                navAsset: "الأصول",
+                navBenefit: "المزايا",
+                navMenu: "القائمة"
+            },
+            de: {
+                welcome: "Globale Super-Banking-Plattform 👋",
+                subWelcome: "Unterstützung für Ihr sicheres und intelligentes Finanzleben jeden Tag.",
+                accountName: "HK Hauptkonto",
+                withdrawable: "Verfügbar",
+                btnTransfer: "Überweisen",
+                btnDeposit: "Einzahlen",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31,41% Zinsen",
+                btnManage: "Verwalten",
+                btnSwap: "Soforttausch",
+                qMenu1: "Überweisung",
+                qMenu2: "Einzahlen",
+                qMenu3: "Kredit",
+                qMenu4: "QR-Pay",
+                historyTitle: "Letzte Transaktionen",
+                viewAll: "Alle anzeigen",
+                navHome: "Start",
+                navAsset: "Vermögen",
+                navBenefit: "Vorteile",
+                navMenu: "Menü"
+            },
+            it: {
+                welcome: "Piattaforma di Super Banking Globale 👋",
+                subWelcome: "Supporta la tua vita finanziaria sicura e intelligente ogni giorno.",
+                accountName: "Conto Principale HK",
+                withdrawable: "Disponibile",
+                btnTransfer: "Trasferisci",
+                btnDeposit: "Deposita",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Gestisci",
+                btnSwap: "Scambio Immediato",
+                qMenu1: "Trasferisci",
+                qMenu2: "Deposita",
+                qMenu3: "Prestito",
+                qMenu4: "QR Pay",
+                historyTitle: "Transazioni Recenti",
+                viewAll: "Mostra Tutto",
+                navHome: "Home",
+                navAsset: "Patrimonio",
+                navBenefit: "Vantaggi",
+                navMenu: "Menu"
+            },
+            fr: {
+                welcome: "Plateforme de Super Banque Mondiale 👋",
+                subWelcome: "Soutenir votre vie financière sûre et intelligente au quotidien.",
+                accountName: "Compte Principal HK",
+                withdrawable: "Disponible",
+                btnTransfer: "Transférer",
+                btnDeposit: "Déposer",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Gérer",
+                btnSwap: "Échange Instantané",
+                qMenu1: "Transfert",
+                qMenu2: "Dépôt",
+                qMenu3: "Crédit",
+                qMenu4: "QR Pay",
+                historyTitle: "Transactions Récents",
+                viewAll: "Tout Voir",
+                navHome: "Accueil",
+                navAsset: "Actifs",
+                navBenefit: "Avantages",
+                navMenu: "Menu"
+            },
+            yo: {
+                welcome: "Eto Banki Agbaye Super 👋",
+                subWelcome: "Agbekalẹ igbesi aye inawo to daju ati ti o gbọn lojoojumọ.",
+                accountName: "Account HK Akọkọ",
+                withdrawable: "To wa fun yiyọ",
+                btnTransfer: "Riran Owo",
+                btnDeposit: "Fikun Owo",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Ṣakoso",
+                btnSwap: "Iṣiparọ Kiakia",
+                qMenu1: "Riran Owo",
+                qMenu2: "Fikun Owo",
+                qMenu3: "Agbin Owo",
+                qMenu4: "QR Pay",
+                historyTitle: "Awọn Isọtẹlẹ Owo Titun",
+                viewAll: "Awo Gbogbo",
+                navHome: "Ile",
+                navAsset: "Awọn Dukia",
+                navBenefit: "Awọn Anfaani",
+                navMenu: "Eto"
+            },
+            pcm: {
+                welcome: "Global Super Banking Platform 👋",
+                subWelcome: "Dey kam support ya safe and smart money life everyday.",
+                accountName: "HK Main Account",
+                withdrawable: "Dey ready for comot",
+                btnTransfer: "Send Money",
+                btnDeposit: "Put Money",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Arrange am",
+                btnSwap: "Change sharp sharp",
+                qMenu1: "Send",
+                qMenu2: "Put",
+                qMenu3: "Borrow Money",
+                qMenu4: "QR Pay",
+                historyTitle: "Recent Transactions",
+                viewAll: "See All",
+                navHome: "Home",
+                navAsset: "Assets",
+                navBenefit: "Gain",
+                navMenu: "Menu"
+            },
+            zu: {
+                welcome: "Isikhungo Sebhange Esinkulu Sasezweni 👋",
+                subWelcome: "Sisekela impilo yakho yezezimali ephephile nehlakaniphile nsuku zonke.",
+                accountName: "I-Akhawunti Enkulu Ye-HK",
+                withdrawable: "Iyayitholakala",
+                btnTransfer: "Thumela",
+                btnDeposit: "Faka Imali",
+                piVaultName: "I-Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Phatha",
+                btnSwap: "Shintsha Manje",
+                qMenu1: "Thumela",
+                qMenu2: "Faka Imali",
+                qMenu3: "Inkokhelo",
+                qMenu4: "I-QR Pay",
+                historyTitle: "Ukuthengiselana Kwakamuva",
+                viewAll: "Buka Konke",
+                navHome: "Ikhaya",
+                navAsset: "Inceba",
+                navBenefit: "Izinketho",
+                navMenu: "Iimenyu"
+            },
+            es: {
+                welcome: "Plataforma de Súper Banca Global 👋",
+                subWelcome: "Apoyando su vida financiera segura e inteligente todos los días.",
+                accountName: "Cuenta Principal HK",
+                withdrawable: "Disponible",
+                btnTransfer: "Transferir",
+                btnDeposit: "Depositar",
+                piVaultName: "Pi Trust & SafeBox",
+                piRate: "31.41% APY",
+                btnManage: "Gestionar",
+                btnSwap: "Intercambio Instantáneo",
+                qMenu1: "Transferir",
+                qMenu2: "Depositar",
+                qMenu3: "Crédito",
+                qMenu4: "Pago QR",
+                historyTitle: "Transacciones Recientes",
+                viewAll: "Ver Todo",
+                navHome: "Inicio",
+                navAsset: "Activos",
+                navBenefit: "Beneficios",
+                navMenu: "Menú"
+            },
+            hi: {
+                welcome: "ग्लोबल सुपर बैंकिंग प्लेटफॉर्म 👋",
+                subWelcome: "हर दिन आपके सुरक्षित और समझदारी भरे वित्तीय जीवन का समर्थन करता है।",
+                accountName: "HK मुख्य खाता",
+                withdrawable: "निकालने योग्य",
+                btnTransfer: "ट्रांसफर करें",
+                btnDeposit: "जमा करें",
+                piVaultName: "Pi ट्रस्ट और सेफ़बॉक्स",
+                piRate: "31.41% वार्षिक ब्याज",
+                btnManage: "प्रबंधित करें",
+                btnSwap: "तुरंत स्वैप करें",
+                qMenu1: "ट्रांसफर",
+                qMenu2: "जमा करें",
+                qMenu3: "क्रेडिट लोन",
+                qMenu4: "QR पे",
+                historyTitle: "हाल के लेन-देन",
+                viewAll: "सभी देखें",
+                navHome: "होम",
+                navAsset: "संपत्ति",
+                navBenefit: "लाभ",
+                navMenu: "मेनू"
+            }
+        };
+
         function changeGlobalLanguage(lang) {
-            console.log("선택된 글로벌 언어:", lang);
+            const t = translations[lang] || translations['ko'];
+            document.getElementById('txtWelcome').innerText = t.welcome;
+            document.getElementById('txtSubWelcome').innerText = t.subWelcome;
+            document.getElementById('txtAccountName').innerText = t.accountName;
+            document.getElementById('txtWithdrawable').innerText = t.withdrawable;
+            document.getElementById('btnTransfer').innerText = t.btnTransfer;
+            document.getElementById('btnDeposit').innerText = t.btnDeposit;
+            document.getElementById('txtPiVaultName').innerText = t.piVaultName;
+            document.getElementById('txtPiRate').innerText = t.piRate;
+            document.getElementById('btnManage').innerText = t.btnManage;
+            document.getElementById('btnSwap').innerText = t.btnSwap;
+            document.getElementById('qMenu1').innerText = t.qMenu1;
+            document.getElementById('qMenu2').innerText = t.qMenu2;
+            document.getElementById('qMenu3').innerText = t.qMenu3;
+            document.getElementById('qMenu4').innerText = t.qMenu4;
+            document.getElementById('txtHistoryTitle').innerText = t.historyTitle;
+            document.getElementById('txtViewAll').innerText = t.viewAll;
+            document.getElementById('navHome').innerText = t.navHome;
+            document.getElementById('navAsset').innerText = t.navAsset;
+            document.getElementById('navBenefit').innerText = t.navBenefit;
+            document.getElementById('navMenu').innerText = t.navMenu;
         }
 
         function toggleDrawer() {
@@ -801,3 +1147,4 @@
     </script>
 </body>
 </html>
+
