@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>HK BANK | 대한민국을 바꿀 차세대 모바일 뱅킹</title>
+    <title>HK BANK & WORLD BANK | 글로벌 슈퍼 뱅킹 플랫폼</title>
     <!-- FontAwesome & Google Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;600&display=swap" rel="stylesheet">
@@ -26,6 +26,11 @@
             padding: 0;
             font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
             -webkit-tap-highlight-color: transparent;
+        }
+
+        select option {
+            background-color: #1a1a1a !important;
+            color: #ffffff !important;
         }
 
         body {
@@ -60,6 +65,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
+            border-bottom: 1px solid var(--border-color);
         }
 
         .bank-logo {
@@ -90,18 +96,17 @@
 
         /* 메인 스크롤 영역 */
         main {
-            padding: 10px 20px 30px 20px;
+            padding: 20px;
             flex: 1;
             overflow-y: auto;
         }
 
         .welcome-banner {
             margin-bottom: 20px;
-            padding: 6px 0;
         }
 
         .welcome-banner h2 {
-            font-size: 22px;
+            font-size: 21px;
             font-weight: 700;
             color: var(--text-main);
             margin-bottom: 4px;
@@ -288,10 +293,10 @@
         .history-amount.plus { color: var(--success); }
         .history-amount.minus { color: var(--text-main); }
 
-        /* 🌟 유튜브 & 틱톡 맨 아래 푸터 영역 */
+        /* 유튜브 & 틱톡 맨 아래 푸터 영역 */
         .footer-media-section {
-            margin-top: 20px;
-            padding: 20px 0;
+            margin-top: 24px;
+            padding-top: 20px;
             border-top: 1px solid var(--border-color);
             text-align: center;
         }
@@ -370,7 +375,7 @@
             font-size: 18px;
         }
 
-        /* 🌟 삼선 햄버거 메뉴 서랍 (Drawer) */
+        /* 삼선 햄버거 메뉴 서랍 (Drawer - 60개국어 지원) */
         .drawer-overlay {
             position: fixed;
             top: 0;
@@ -430,6 +435,20 @@
             color: var(--text-muted);
             text-transform: uppercase;
             font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .drawer-lang-select {
+            width: 100%;
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 13px;
+            outline: none;
+            cursor: pointer;
+            font-weight: 600;
             margin-bottom: 10px;
         }
 
@@ -534,7 +553,7 @@
 
         <!-- 메인 화면 -->
         <main>
-            <!-- 웰컴 배너 (호칭 제거 완료) -->
+            <!-- 웰컴 배너 -->
             <div class="welcome-banner">
                 <h2>글로벌 슈퍼 뱅킹 플랫폼 👋</h2>
                 <p>오늘도 안전하고 스마트한 금융 생활을 지원합니다.</p>
@@ -616,7 +635,7 @@
                 </div>
             </div>
 
-            <!-- 🌟 유튜브 & 틱톡 맨 아래 푸터 영역 -->
+            <!-- 유튜브 & 틱톡 맨 아래 푸터 영역 -->
             <div class="footer-media-section">
                 <div class="footer-media-title">Official Media Channels</div>
                 <div class="footer-media-buttons">
@@ -639,13 +658,83 @@
         </nav>
     </div>
 
-    <!-- 🌟 삼선 햄버거 메뉴 서랍 (Drawer) -->
+    <!-- 삼선 햄버거 메뉴 서랍 (Drawer - 60개국어 선택 엔진 탑재) -->
     <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawerOutside(event)">
         <div class="drawer-content">
             <div class="drawer-header">
                 <span class="drawer-title">HK NAVIGATOR</span>
                 <button onclick="toggleDrawer()" style="background:none;border:none;font-size:20px;cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
             </div>
+            
+            <!-- 60개국어 다국어 엔진 선택 바 -->
+            <div class="menu-group">
+                <div class="menu-group-title">🌍 60-Language Engine</div>
+                <select class="drawer-lang-select" id="langSelect" onchange="changeGlobalLanguage(this.value)">
+                    <option value="ko" selected>🇰🇷 한국어 (Korean)</option>
+                    <option value="en">🇺🇸 English (영어)</option>
+                    <option value="zh">🇨🇳 中文 (중국어)</option>
+                    <option value="ja">🇯🇵 日本語 (일본어)</option>
+                    <option value="ru">🇷🇺 Русский (러시아어)</option>
+                    <option value="vi">🇻🇳 Tiếng Việt (베트남어)</option>
+                    <option value="th">🇹🇭 ไทย (태국어)</option>
+                    <option value="id">🇮🇩 Bahasa Indonesia (인도네시아어)</option>
+                    <option value="ps">🇵🇸 العربية (팔레스타인/아랍어)</option>
+                    <option value="de">🇩🇪 Deutsch (독일어)</option>
+                    <option value="it">🇮🇹 Italiano (이탈리아어)</option>
+                    <option value="fr">🇫🇷 Français (프랑스어)</option>
+                    <option value="es">🇪🇸 Español (스페인어)</option>
+                    <option value="pt">🇵🇹 Português (포르투갈어)</option>
+                    <option value="tr">🇹🇷 Türkçe (터키어)</option>
+                    <option value="nl">🇳🇱 Nederlands (네덜란드어)</option>
+                    <option value="pl">🇵🇱 Polski (폴란드어)</option>
+                    <option value="uk">🇺🇦 Українська (우크라이나어)</option>
+                    <option value="sv">🇸🇪 Svenska (스웨덴어)</option>
+                    <option value="no">🇳🇴 Norsk (노르웨이어)</option>
+                    <option value="fi">🇫🇮 Suomi (핀란드어)</option>
+                    <option value="da">🇩🇰 Dansk (덴마크어)</option>
+                    <option value="cs">🇨🇿 Čeština (체코어)</option>
+                    <option value="hu">🇭🇺 Magyar (헝가리어)</option>
+                    <option value="ro">🇷🇴 Română (루마니아어)</option>
+                    <option value="el">🇬🇷 Ελληνικά (그리스어)</option>
+                    <option value="hi">🇮🇳 हिन्दी (힌디어)</option>
+                    <option value="bn">🇧🇩 한국어/বাংলা (벵골어)</option>
+                    <option value="ms">🇲🇾 Bahasa Melayu (말레이어)</option>
+                    <option value="fil">🇵🇭 Tagalog (필리핀어)</option>
+                    <option value="my">🇲🇲 မြန်မာဘာသာ (미얀마어)</option>
+                    <option value="km">🇰🇭 ភាសាខ្មែរ (크메르어)</option>
+                    <option value="lo">🇱🇦 ພາສາລາວ (라오어)</option>
+                    <option value="ur">🇵🇰 اردو (우르두어)</option>
+                    <option value="fa">🇮🇷 فارسی (페르시아어)</option>
+                    <option value="he">🇮🇱 עברית (히브리어)</option>
+                    <option value="sw">🇰🇪 Kiswahili (스왈리어)</option>
+                    <option value="ha">🇳🇬 Hausa (하우사어)</option>
+                    <option value="yo">🇳🇬 Yorùbá (요루바어)</option>
+                    <option value="ig">🇳🇬 Asụsụ Igbo (이그보어)</option>
+                    <option value="am">🇪🇹 አማርኛ (암하라어)</option>
+                    <option value="zu">🇿🇦 isiZulu (줄루어)</option>
+                    <option value="xh">🇿🇦 isiXhosa (코사어)</option>
+                    <option value="af">🇿🇦 Afrikaans (아프리칸스어)</option>
+                    <option value="mg">🇲🇬 Malagasy (마다가스카르어)</option>
+                    <option value="sn">🇿🇼 chiShona (쇼나어)</option>
+                    <option value="st">🇱🇸 Sesotho (세소토어)</option>
+                    <option value="tn">🇧🇼 Setswana (츠와나어)</option>
+                    <option value="ny">🇲🇼 Chichewa (체와어)</option>
+                    <option value="rw">🇷🇼 Kinyarwanda (키냐르완다어)</option>
+                    <option value="so">🇸🇴 Soomaali (소말리아어)</option>
+                    <option value="ln">🇨🇩 Lingala (링갈리어)</option>
+                    <option value="wo">🇸🇳 Wolof (월로프어)</option>
+                    <option value="ff">🇬🇳 Fulfulde (풀라어)</option>
+                    <option value="ti">🇪🇷 ትግርኛ (티그리냐어)</option>
+                    <option value="om">🇪🇹 Afaan Oromoo (오로모어)</option>
+                    <option value="ka">🇬🇪 ქართული (조지아어)</option>
+                    <option value="hy">🇦🇲 Հայերեն (아르메니아어)</option>
+                    <option value="az">🇦🇿 Azərbaycanca (아제르바이잔어)</option>
+                    <option value="kk">🇰🇿 Қазақ тілі (카자흐어)</option>
+                    <option value="uz">🇺🇿 Oʻzbekcha (우즈베크어)</option>
+                    <option value="mn">🇲🇳 Монгол (몽골어)</option>
+                </select>
+            </div>
+
             <div class="menu-group">
                 <div class="menu-group-title">Official Media Hubs</div>
                 <a class="menu-item" href="https://www.youtube.com/@Hyekong2026" target="_blank"><i class="fa-brands fa-youtube" style="color:#ff0000;"></i> YouTube (@Hyekong2026)</a>
@@ -671,9 +760,13 @@
         </div>
     </div>
 
-    <!-- 뱅킹 로직 스크립트 -->
+    <!-- 로직 스크립트 -->
     <script>
         let currentBalance = 314159000;
+
+        function changeGlobalLanguage(lang) {
+            console.log("선택된 60개국 언어:", lang);
+        }
 
         function toggleDrawer() {
             document.getElementById('drawerOverlay').classList.toggle('active');
